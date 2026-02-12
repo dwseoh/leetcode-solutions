@@ -21,3 +21,10 @@ npm link
 ```bash
 leetdocs new -n
 ```
+
+after completing the problem, run:
+```bash
+leetdocs done [problem_id] -n
+```
+
+to run complexity analysis + autofill some parts of the metadata + README for the problem
