@@ -1,0 +1,129 @@
+{
+  "id": 3,
+  "title": "Two Sum",
+  "slug": "two-sum",
+  "url": "https://leetcode.com/problems/two-sum/",
+  "difficulty": "Easy",
+  "acceptance_rate": 57,
+  "status": "solved",
+  "date_solved": "2026-02-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "3Sum",
+      "slug": "3sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "4Sum",
+      "slug": "4sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Two Sum II - Input Array Is Sorted",
+      "slug": "two-sum-ii-input-array-is-sorted",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Two Sum III - Data structure design",
+      "slug": "two-sum-iii-data-structure-design",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Subarray Sum Equals K",
+      "slug": "subarray-sum-equals-k",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Two Sum IV - Input is a BST",
+      "slug": "two-sum-iv-input-is-a-bst",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Two Sum Less Than K",
+      "slug": "two-sum-less-than-k",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Max Number of K-Sum Pairs",
+      "slug": "max-number-of-k-sum-pairs",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Good Meals",
+      "slug": "count-good-meals",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Number of Pairs With Absolute Difference K",
+      "slug": "count-number-of-pairs-with-absolute-difference-k",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Number of Pairs of Strings With Concatenation Equal to Target",
+      "slug": "number-of-pairs-of-strings-with-concatenation-equal-to-target",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find All K-Distant Indices in an Array",
+      "slug": "find-all-k-distant-indices-in-an-array",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "First Letter to Appear Twice",
+      "slug": "first-letter-to-appear-twice",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Number of Excellent Pairs",
+      "slug": "number-of-excellent-pairs",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Number of Arithmetic Triplets",
+      "slug": "number-of-arithmetic-triplets",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Node With Highest Edge Score",
+      "slug": "node-with-highest-edge-score",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Check Distances Between Same Letters",
+      "slug": "check-distances-between-same-letters",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find Subarrays With Equal Sum",
+      "slug": "find-subarrays-with-equal-sum",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Largest Positive Integer That Exists With Its Negative",
+      "slug": "largest-positive-integer-that-exists-with-its-negative",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Number of Distinct Averages",
+      "slug": "number-of-distinct-averages",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Count Pairs Whose Sum is Less than Target",
+      "slug": "count-pairs-whose-sum-is-less-than-target",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
