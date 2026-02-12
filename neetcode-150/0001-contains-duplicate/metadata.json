@@ -5,12 +5,12 @@
   "url": "https://leetcode.com/problems/contains-duplicate/",
   "difficulty": "Easy",
   "acceptance_rate": 64,
-  "status": "unsolved",
-  "date_solved": "YYYY-MM-DD",
-  "attempts": 0,
+  "status": "solved",
+  "date_solved": "2026-02-12",
+  "attempts": 1,
   "complexity": {
-    "time": "O()",
-    "space": "O()"
+    "time": "O(n)",
+    "space": "O(n)"
   },
   "topics": [
     "array",

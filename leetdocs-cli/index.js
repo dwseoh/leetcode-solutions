@@ -217,15 +217,37 @@ program
 
     const today = new Date().toISOString().split('T')[0];
 
-    // Analyze complexity from main.py
+    // Find solution file (try multiple extensions)
+    const SOLUTION_FILES = [
+      { name: 'main.py', lang: 'python' },
+      { name: 'main.cpp', lang: 'cpp' },
+      { name: 'main.cc', lang: 'cpp' },
+      { name: 'main.c', lang: 'c' },
+    ];
+
+    let solutionCode = null;
+    let solutionLang = null;
+    let solutionFilename = null;
     let complexity = { time: 'O()', space: 'O()' };
-    const solutionFile = path.join(targetDir, 'main.py');
-    try {
-      const code = await fs.readFile(solutionFile, 'utf-8');
-      complexity = analyzeComplexity(code);
+
+    for (const sf of SOLUTION_FILES) {
+      const filePath = path.join(targetDir, sf.name);
+      try {
+        solutionCode = await fs.readFile(filePath, 'utf-8');
+        solutionLang = sf.lang;
+        solutionFilename = sf.name;
+        break;
+      } catch {
+        // file doesn't exist, try next
+      }
+    }
+
+    if (solutionCode) {
+      complexity = analyzeComplexity(solutionCode, solutionFilename);
+      console.log(chalk.blue(`Found ${solutionFilename}`));
       console.log(chalk.blue(`Analyzed complexity: Time ${complexity.time}, Space ${complexity.space}`));
-    } catch {
-      console.log(chalk.yellow('No main.py found, skipping complexity analysis'));
+    } else {
+      console.log(chalk.yellow('No solution file found (main.py/main.cpp/main.c), skipping complexity analysis'));
     }
 
     // Update metadata.json
@@ -243,10 +265,11 @@ program
       return;
     }
 
-    // Update README.md status and complexity lines
+    // Update README.md
     const readmePath = path.join(targetDir, 'README.md');
     try {
       let readme = await fs.readFile(readmePath, 'utf-8');
+
       // Update status line
       readme = readme.replace(
         /\*\*Status:\*\*.*/,
@@ -267,6 +290,17 @@ program
         /\*\*Space Complexity:\*\*.*/,
         `**Space Complexity:** \`${complexity.space}\``
       );
+
+      // Insert solution code into the Solution section
+      if (solutionCode) {
+        const solutionBlock = `## Solution\n\n\`\`\`${solutionLang}\n${solutionCode.trimEnd()}\n\`\`\``;
+        // Replace existing solution section (from ## Solution to the next ---)
+        readme = readme.replace(
+          /## Solution\n[\s\S]*?(?=\n---)/,
+          solutionBlock
+        );
+      }
+
       await fs.writeFile(readmePath, readme);
     } catch (error) {
       console.log(chalk.red(`Error updating README.md: ${error.message}`));
@@ -275,6 +309,9 @@ program
 
     console.log(chalk.green(`✓ Marked problem ${id} as solved (${today})`));
     console.log(chalk.green(`✓ Complexity: Time ${complexity.time} | Space ${complexity.space}`));
+    if (solutionCode) {
+      console.log(chalk.green(`✓ Inserted ${solutionFilename} into README`));
+    }
   });
 
 // Set command

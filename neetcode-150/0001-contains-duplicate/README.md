@@ -4,7 +4,7 @@
 **Acceptance Rate:** `64%`  
 **Topics:** `array` `hash-map` `sorting`  
 **Companies:** `company1` `company2`  
-**Date Solved:** 2026-02-11  
+**Date Solved:** 2026-02-12  
 **Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/contains-duplicate/)
@@ -86,8 +86,9 @@ class Solution:
                 return True
         
         return False
-```
 
+# O(n) time, O(n) space
+```
 ---
 
 ## Alternative Approaches
