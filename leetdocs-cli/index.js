@@ -167,6 +167,116 @@ program
     }
   });
 
+// Done command
+program
+  .command('done')
+  .description('Mark a problem as solved with today\'s date and auto-analyze complexity')
+  .argument('<id>', 'Problem ID number')
+  .option('-n, --neetcode', 'NeetCode problem')
+  .option('-l, --leetcode', 'LeetCode problem')
+  .action(async (id, options) => {
+    const { analyzeComplexity } = await import('./analyzer.js');
+    const config = await loadConfig();
+    const isNeetCode = options.neetcode;
+    const isLeetCode = options.leetcode;
+
+    if (!isNeetCode && !isLeetCode) {
+      console.log(chalk.red('Please specify either -n (NeetCode) or -l (LeetCode)'));
+      return;
+    }
+
+    const platform = isNeetCode ? 'neetcode' : 'leetcode';
+    const parentDir = config[platform].directory;
+
+    if (!parentDir) {
+      console.log(chalk.red(`No parent directory set for ${platform}.`));
+      return;
+    }
+
+    // Find directory matching the ID
+    const paddedId = id.toString().padStart(4, '0');
+    let targetDir = null;
+
+    try {
+      const entries = await fs.readdir(parentDir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (entry.isDirectory() && entry.name.startsWith(`${paddedId}-`)) {
+          targetDir = path.join(parentDir, entry.name);
+          break;
+        }
+      }
+    } catch (error) {
+      console.log(chalk.red(`Error reading directory: ${error.message}`));
+      return;
+    }
+
+    if (!targetDir) {
+      console.log(chalk.red(`No directory found for ID ${id}`));
+      return;
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+
+    // Analyze complexity from main.py
+    let complexity = { time: 'O()', space: 'O()' };
+    const solutionFile = path.join(targetDir, 'main.py');
+    try {
+      const code = await fs.readFile(solutionFile, 'utf-8');
+      complexity = analyzeComplexity(code);
+      console.log(chalk.blue(`Analyzed complexity: Time ${complexity.time}, Space ${complexity.space}`));
+    } catch {
+      console.log(chalk.yellow('No main.py found, skipping complexity analysis'));
+    }
+
+    // Update metadata.json
+    const metadataPath = path.join(targetDir, 'metadata.json');
+    try {
+      const raw = await fs.readFile(metadataPath, 'utf-8');
+      const metadata = JSON.parse(raw);
+      metadata.status = 'solved';
+      metadata.date_solved = today;
+      metadata.attempts = (metadata.attempts || 0) + 1;
+      metadata.complexity = complexity;
+      await fs.writeFile(metadataPath, JSON.stringify(metadata, null, 2));
+    } catch (error) {
+      console.log(chalk.red(`Error updating metadata.json: ${error.message}`));
+      return;
+    }
+
+    // Update README.md status and complexity lines
+    const readmePath = path.join(targetDir, 'README.md');
+    try {
+      let readme = await fs.readFile(readmePath, 'utf-8');
+      // Update status line
+      readme = readme.replace(
+        /\*\*Status:\*\*.*/,
+        `**Status:** ✅ Solved  `
+      );
+      // Update date solved line
+      readme = readme.replace(
+        /\*\*Date Solved:\*\*.*/,
+        `**Date Solved:** ${today}  `
+      );
+      // Update time complexity
+      readme = readme.replace(
+        /\*\*Time Complexity:\*\*.*/,
+        `**Time Complexity:** \`${complexity.time}\`  `
+      );
+      // Update space complexity
+      readme = readme.replace(
+        /\*\*Space Complexity:\*\*.*/,
+        `**Space Complexity:** \`${complexity.space}\``
+      );
+      await fs.writeFile(readmePath, readme);
+    } catch (error) {
+      console.log(chalk.red(`Error updating README.md: ${error.message}`));
+      return;
+    }
+
+    console.log(chalk.green(`✓ Marked problem ${id} as solved (${today})`));
+    console.log(chalk.green(`✓ Complexity: Time ${complexity.time} | Space ${complexity.space}`));
+  });
+
 // Set command
 program
   .command('set')

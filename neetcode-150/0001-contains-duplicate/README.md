@@ -4,8 +4,8 @@
 **Acceptance Rate:** `64%`  
 **Topics:** `array` `hash-map` `sorting`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-02-11  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/contains-duplicate/)
 

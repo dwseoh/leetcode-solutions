@@ -4,8 +4,8 @@
 **Acceptance Rate:** `67.7%`  
 **Topics:** `hash-map` `string` `sorting`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-02-12  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/valid-anagram/)
 
@@ -36,6 +36,8 @@ Output: false
 ## Intuition
 
 <!-- What was your first instinct? What pattern did you recognize? -->
+Use a hash map to store freq & compare
+Sorting could work but O(n log n)
 
 ---
 
@@ -43,21 +45,38 @@ Output: false
 
 <!-- Walk through your approach step by step before jumping to code. -->
 
-1. 
-2. 
-3. 
+1. Initialize a hash map
+2. Iterate through s and increment the count of each character
+3. Iterate through t and decrement the count of each character
+4. If the count of any character is not 0, return false
+5. Return true
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+OPTIMIZATION: use for loop 26 with one frequency list and increment/decrement in the same loop
+
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(1)`
 
 ---
 
 ## Solution
 
-```cpp
-// C++ solution
+```python
+class Solution:
 
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
 
+        arr = [0] * 26
+
+        for i in range(len(s)):
+            arr[ord(s[i]) - ord('a')] += 1
+            arr[ord(t[i]) - ord('a')] -= 1
+
+        for check in arr:
+            if check != 0:
+                return False
+        return True
 ```
 
 ---
