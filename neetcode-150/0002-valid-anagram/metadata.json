@@ -1,0 +1,45 @@
+{
+  "id": 2,
+  "title": "Valid Anagram",
+  "slug": "valid-anagram",
+  "url": "https://leetcode.com/problems/valid-anagram/",
+  "difficulty": "Easy",
+  "acceptance_rate": 67.7,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "hash-map",
+    "string",
+    "sorting"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Group Anagrams",
+      "slug": "group-anagrams",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Palindrome Permutation",
+      "slug": "palindrome-permutation",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find All Anagrams in a String",
+      "slug": "find-all-anagrams-in-a-string",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Resultant Array After Removing Anagrams",
+      "slug": "find-resultant-array-after-removing-anagrams",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}

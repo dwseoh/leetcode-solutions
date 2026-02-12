@@ -1,0 +1,45 @@
+{
+  "id": 1,
+  "title": "Contains Duplicate",
+  "slug": "contains-duplicate",
+  "url": "https://leetcode.com/problems/contains-duplicate/",
+  "difficulty": "Easy",
+  "acceptance_rate": 64,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "sorting"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Contains Duplicate II",
+      "slug": "contains-duplicate-ii",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Contains Duplicate III",
+      "slug": "contains-duplicate-iii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Make Array Zero by Subtracting Equal Amounts",
+      "slug": "make-array-zero-by-subtracting-equal-amounts",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find Valid Pair of Adjacent Digits in String",
+      "slug": "find-valid-pair-of-adjacent-digits-in-string",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
