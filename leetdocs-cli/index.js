@@ -314,6 +314,123 @@ program
     }
   });
 
+// Helper: Load all metadata.json files from configured directories
+async function loadAllMetadata() {
+  const config = await loadConfig();
+  const problems = [];
+  const dirs = [config.neetcode?.directory, config.leetcode?.directory].filter(Boolean);
+
+  for (const parentDir of dirs) {
+    try {
+      const entries = await fs.readdir(parentDir, { withFileTypes: true });
+      for (const entry of entries) {
+        if (!entry.isDirectory()) continue;
+        if (entry.name.includes('template')) continue; // skip template dirs
+        const metaPath = path.join(parentDir, entry.name, 'metadata.json');
+        try {
+          const raw = await fs.readFile(metaPath, 'utf-8');
+          const meta = JSON.parse(raw);
+          meta._dir = entry.name;
+          problems.push(meta);
+        } catch {
+          // skip dirs without metadata
+        }
+      }
+    } catch {
+      // dir doesn't exist
+    }
+  }
+
+  return problems.sort((a, b) => (a.id || 0) - (b.id || 0));
+}
+
+// Search command
+program
+  .command('search')
+  .description('Search and filter problems')
+  .argument('[keyword]', 'Search by title keyword')
+  .option('-t, --topic <topic>', 'Filter by topic')
+  .option('-d, --difficulty <difficulty>', 'Filter by difficulty (Easy/Medium/Hard)')
+  .option('-s, --status <status>', 'Filter by status (solved/unsolved)')
+  .action(async (keyword, options) => {
+    let problems = await loadAllMetadata();
+
+    if (problems.length === 0) {
+      console.log(chalk.yellow('No problems found. Make sure your directories are configured with "leetdocs set".'));
+      return;
+    }
+
+    // Apply filters
+    if (keyword) {
+      const kw = keyword.toLowerCase();
+      problems = problems.filter(p => p.title?.toLowerCase().includes(kw) || p.slug?.includes(kw));
+    }
+    if (options.topic) {
+      const t = options.topic.toLowerCase();
+      problems = problems.filter(p => (p.topics || []).some(topic => topic.toLowerCase().includes(t)));
+    }
+    if (options.difficulty) {
+      const d = options.difficulty.toLowerCase();
+      problems = problems.filter(p => p.difficulty?.toLowerCase() === d);
+    }
+    if (options.status) {
+      const s = options.status.toLowerCase();
+      problems = problems.filter(p => p.status?.toLowerCase() === s);
+    }
+
+    if (problems.length === 0) {
+      console.log(chalk.yellow('No problems match your filters.'));
+      return;
+    }
+
+    // Display header
+    const header = `${'ID'.padEnd(5)} ${'Title'.padEnd(35)} ${'Diff'.padEnd(8)} ${'Status'.padEnd(10)} ${'Topics'.padEnd(30)} ${'Complexity'}`;
+    console.log(chalk.bold.white(header));
+    console.log(chalk.gray('─'.repeat(110)));
+
+    // Display rows
+    for (const p of problems) {
+      const id = String(p.id || '?').padStart(3, '0').padEnd(5);
+      const title = (p.title || '').padEnd(35).substring(0, 35);
+      const diff = (p.difficulty || '').padEnd(8);
+      const statusIcon = p.status === 'solved' ? '✅' : p.status === 'revisit' ? '🔁' : '❌';
+      const status = statusIcon.padEnd(10);
+      const topics = (p.topics || []).join(', ').padEnd(30).substring(0, 30);
+      const comp = p.complexity ? `${p.complexity.time} / ${p.complexity.space}` : '';
+
+      const diffColor = p.difficulty === 'Easy' ? chalk.green : p.difficulty === 'Medium' ? chalk.yellow : chalk.red;
+
+      console.log(`${chalk.cyan(id)} ${chalk.white(title)} ${diffColor(diff)} ${status} ${chalk.gray(topics)} ${chalk.blue(comp)}`);
+    }
+
+    console.log(chalk.gray(`\n${problems.length} problem(s) found`));
+  });
+
+// Viz command
+program
+  .command('viz')
+  .description('Generate a visual roadmap of your progress')
+  .action(async () => {
+    const { generateVisualization } = await import('./visualizer.js');
+    const problems = await loadAllMetadata();
+
+    if (problems.length === 0) {
+      console.log(chalk.yellow('No problems found.'));
+      return;
+    }
+
+    const config = await loadConfig();
+    const outputDir = config.neetcode?.directory || config.leetcode?.directory || __dirname;
+    const outputPath = path.join(path.dirname(outputDir), 'roadmap.html');
+
+    await generateVisualization(problems, outputPath);
+    console.log(chalk.green(`✓ Generated roadmap at ${outputPath}`));
+
+    // Open in browser
+    const { exec } = await import('child_process');
+    exec(`open "${outputPath}"`);
+  });
+
 // Set command
 program
   .command('set')
