@@ -6,8 +6,8 @@
   "difficulty": "Easy",
   "acceptance_rate": 64,
   "status": "solved",
-  "date_solved": "2026-02-12",
-  "attempts": 1,
+  "date_solved": "2026-02-11",
+  "attempts": 0,
   "complexity": {
     "time": "O(n)",
     "space": "O(n)"

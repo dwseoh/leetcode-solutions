@@ -7,7 +7,7 @@
   "acceptance_rate": 67.7,
   "status": "solved",
   "date_solved": "2026-02-12",
-  "attempts": 1,
+  "attempts": 0,
   "complexity": {
     "time": "O(n)",
     "space": "O(1)"
