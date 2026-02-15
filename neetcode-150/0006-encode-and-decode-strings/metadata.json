@@ -1,0 +1,45 @@
+{
+  "id": 6,
+  "title": "Encode and Decode Strings",
+  "slug": "encode-and-decode-strings",
+  "url": "https://leetcode.com/problems/encode-and-decode-strings/",
+  "difficulty": "Medium",
+  "acceptance_rate": 51.2,
+  "status": "solved",
+  "date_solved": "2026-02-15",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "string",
+    "design"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Count and Say",
+      "slug": "count-and-say",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Serialize and Deserialize Binary Tree",
+      "slug": "serialize-and-deserialize-binary-tree",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "String Compression",
+      "slug": "string-compression",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Binary Substrings",
+      "slug": "count-binary-substrings",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
