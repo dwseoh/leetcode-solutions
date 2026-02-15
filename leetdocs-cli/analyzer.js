@@ -242,7 +242,7 @@ function getMaxLoopDepthC(lines) {
             maxDepth = Math.max(maxDepth, braceDepths.length);
         }
     }
-    return { depth: maxDepth, hasCharIteration };
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal };
 }
 
 // ───────────────────────────────────────────────
