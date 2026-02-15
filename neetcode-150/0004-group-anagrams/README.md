@@ -4,7 +4,7 @@
 **Acceptance Rate:** `72.1%`  
 **Topics:** `array` `hash-map` `string` `sorting`  
 **Companies:** `company1` `company2`  
-**Date Solved:** 2026-02-13  
+**Date Solved:** 2026-02-15  
 **Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/group-anagrams/)
@@ -55,7 +55,7 @@ Output: [["a"]]
 2. 
 3. 
 
-**Time Complexity:** `O(n^2)`  
+**Time Complexity:** `O(n * k)`  
 **Space Complexity:** `O(n)`
 
 ---

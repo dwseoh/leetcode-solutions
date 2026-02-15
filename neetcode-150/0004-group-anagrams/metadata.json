@@ -6,10 +6,10 @@
   "difficulty": "Medium",
   "acceptance_rate": 72.1,
   "status": "solved",
-  "date_solved": "2026-02-13",
-  "attempts": 2,
+  "date_solved": "2026-02-15",
+  "attempts": 3,
   "complexity": {
-    "time": "O(n^2)",
+    "time": "O(n * k)",
     "space": "O(n)"
   },
   "topics": [

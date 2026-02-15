@@ -63,9 +63,11 @@ function estimateTime(code, lines, lang) {
         ? /heapq\./.test(code)
         : (/priority_queue/.test(code) || /\bmake_heap\b|\bpush_heap\b/.test(code));
 
-    const maxLoopDepth = lang === 'python'
+    const loopInfo = lang === 'python'
         ? getMaxLoopDepthPython(lines)
         : getMaxLoopDepthC(lines);
+    const maxLoopDepth = loopInfo.depth;
+    const hasCharIteration = loopInfo.hasCharIteration;
 
     const hasRecursion = detectRecursion(code, lang);
     const hasWhileHalving = /while\b[\s\S]*?(?:\/=?\s*2|>>=?\s*1)/.test(code);
@@ -94,6 +96,7 @@ function estimateTime(code, lines, lang) {
 
     if (maxLoopDepth === 0) return 'O(1)';
     if (maxLoopDepth === 1) return 'O(n)';
+    if (maxLoopDepth === 2 && hasCharIteration) return 'O(n * k)';
     if (maxLoopDepth === 2) return 'O(n^2)';
     return `O(n^${maxLoopDepth})`;
 }
@@ -146,6 +149,8 @@ function estimateSpaceC(code) {
 function getMaxLoopDepthPython(lines) {
     let maxDepth = 0;
     let loopStack = []; // indent levels of active loops
+    let loopVars = [];  // iteration variables at each loop level
+    let hasCharIteration = false;
 
     for (const line of lines) {
         const stripped = line.trimEnd();
@@ -156,20 +161,36 @@ function getMaxLoopDepthPython(lines) {
 
         while (loopStack.length > 0 && indent <= loopStack[loopStack.length - 1]) {
             loopStack.pop();
+            loopVars.pop();
         }
 
         if (/^(for|while)\s+/.test(trimmed) && trimmed.endsWith(':')) {
+            // Check if this inner loop iterates over an outer loop variable
+            // e.g., "for c in s:" where s is the iteration var of the outer loop
+            const forMatch = trimmed.match(/^for\s+\w+\s+in\s+(\w+)\s*:$/);
+            if (forMatch && loopVars.length > 0) {
+                const iterTarget = forMatch[1];
+                if (loopVars.includes(iterTarget)) {
+                    hasCharIteration = true;
+                }
+            }
+
+            // Extract the loop variable for "for X in ..." patterns
+            const varMatch = trimmed.match(/^for\s+(\w+)\s+in\s+/);
             loopStack.push(indent);
+            loopVars.push(varMatch ? varMatch[1] : null);
             maxDepth = Math.max(maxDepth, loopStack.length);
         }
     }
-    return maxDepth;
+    return { depth: maxDepth, hasCharIteration };
 }
 
 function getMaxLoopDepthC(lines) {
     let maxDepth = 0;
     let currentDepth = 0;
     let braceDepths = []; // brace depth at each loop entry
+    let loopVars = [];    // iteration variables at each loop level
+    let hasCharIteration = false;
 
     for (const line of lines) {
         const trimmed = line.trim();
@@ -183,17 +204,31 @@ function getMaxLoopDepthC(lines) {
                 // Pop loops that ended
                 while (braceDepths.length > 0 && currentDepth < braceDepths[braceDepths.length - 1]) {
                     braceDepths.pop();
+                    loopVars.pop();
                 }
             }
         }
 
         // Detect loop starts
         if (/^\s*(for|while)\s*\(/.test(line)) {
+            // Check for range-based for loop iterating over outer variable
+            // e.g., "for (char c : s)" or "for (auto& x : word)"
+            const rangeMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+\w+\s*:\s*(\w+)\s*\)/);
+            if (rangeMatch && loopVars.length > 0) {
+                const iterTarget = rangeMatch[1];
+                if (loopVars.includes(iterTarget)) {
+                    hasCharIteration = true;
+                }
+            }
+
+            // Extract loop variable from range-based for
+            const varMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+(\w+)\s*:/);
             braceDepths.push(currentDepth);
+            loopVars.push(varMatch ? varMatch[1] : null);
             maxDepth = Math.max(maxDepth, braceDepths.length);
         }
     }
-    return maxDepth;
+    return { depth: maxDepth, hasCharIteration };
 }
 
 // ───────────────────────────────────────────────
