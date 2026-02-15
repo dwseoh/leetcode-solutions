@@ -68,6 +68,7 @@ function estimateTime(code, lines, lang) {
         : getMaxLoopDepthC(lines);
     const maxLoopDepth = loopInfo.depth;
     const hasCharIteration = loopInfo.hasCharIteration;
+    const hasBucketTraversal = loopInfo.hasBucketTraversal;
 
     const hasRecursion = detectRecursion(code, lang);
     const hasWhileHalving = /while\b[\s\S]*?(?:\/=?\s*2|>>=?\s*1)/.test(code);
@@ -96,6 +97,7 @@ function estimateTime(code, lines, lang) {
 
     if (maxLoopDepth === 0) return 'O(1)';
     if (maxLoopDepth === 1) return 'O(n)';
+    if (maxLoopDepth === 2 && hasBucketTraversal) return 'O(n)';
     if (maxLoopDepth === 2 && hasCharIteration) return 'O(n * k)';
     if (maxLoopDepth === 2) return 'O(n^2)';
     return `O(n^${maxLoopDepth})`;
@@ -116,7 +118,9 @@ function estimateSpacePython(code) {
     const hasSet = /set\(/.test(code);
     const hasList = /\[\s*\]|\blist\(/.test(code) || /\.append\(/.test(code);
     const hasDeque = /deque\(/.test(code);
-    const has2D = /\[\s*\[/.test(code);
+    // True 2D arrays like [[0]*m for ...] or nested list literals, but NOT
+    // [[] for ...] which just creates a flat list of empty sublists (O(n))
+    const has2D = /\[\s*\[/.test(code) && !/\[\s*\[\s*\]\s*(for|,)/.test(code);
 
     if (has2D) return 'O(n * m)';
     if (hasDict || hasSet || hasList || hasDeque) return 'O(n)';
@@ -151,6 +155,7 @@ function getMaxLoopDepthPython(lines) {
     let loopStack = []; // indent levels of active loops
     let loopVars = [];  // iteration variables at each loop level
     let hasCharIteration = false;
+    let hasBucketTraversal = false;
 
     for (const line of lines) {
         const stripped = line.trimEnd();
@@ -167,11 +172,19 @@ function getMaxLoopDepthPython(lines) {
         if (/^(for|while)\s+/.test(trimmed) && trimmed.endsWith(':')) {
             // Check if this inner loop iterates over an outer loop variable
             // e.g., "for c in s:" where s is the iteration var of the outer loop
+            // Also check for bucket pattern: "for n in buckets[i]:" where i is the outer var
             const forMatch = trimmed.match(/^for\s+\w+\s+in\s+(\w+)\s*:$/);
+            const bucketMatch = trimmed.match(/^for\s+\w+\s+in\s+\w+\[(\w+)\]\s*:$/);
             if (forMatch && loopVars.length > 0) {
                 const iterTarget = forMatch[1];
                 if (loopVars.includes(iterTarget)) {
                     hasCharIteration = true;
+                }
+            }
+            if (bucketMatch && loopVars.length > 0) {
+                const indexVar = bucketMatch[1];
+                if (loopVars.includes(indexVar)) {
+                    hasBucketTraversal = true;
                 }
             }
 
@@ -182,7 +195,7 @@ function getMaxLoopDepthPython(lines) {
             maxDepth = Math.max(maxDepth, loopStack.length);
         }
     }
-    return { depth: maxDepth, hasCharIteration };
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal };
 }
 
 function getMaxLoopDepthC(lines) {
@@ -191,6 +204,7 @@ function getMaxLoopDepthC(lines) {
     let braceDepths = []; // brace depth at each loop entry
     let loopVars = [];    // iteration variables at each loop level
     let hasCharIteration = false;
+    let hasBucketTraversal = false;
 
     for (const line of lines) {
         const trimmed = line.trim();
