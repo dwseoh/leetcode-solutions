@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/neetcode-150/0007-product-of-array-except-self",
+      "program": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/neetcode-150/0007-product-of-array-except-self/build/Debug/outDebug"
+    }
+  ]
+}

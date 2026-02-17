@@ -1,0 +1,54 @@
+{
+  "id": 7,
+  "title": "Product of Array Except Self",
+  "slug": "product-of-array-except-self",
+  "url": "https://leetcode.com/problems/product-of-array-except-self/",
+  "difficulty": "Medium",
+  "acceptance_rate": 68.6,
+  "status": "solved",
+  "date_solved": "2026-02-17",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "prefix-sum"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Product Subarray",
+      "slug": "maximum-product-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Paint House II",
+      "slug": "paint-house-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Difference in Sums After Removal of Elements",
+      "slug": "minimum-difference-in-sums-after-removal-of-elements",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Construct Product Matrix",
+      "slug": "construct-product-matrix",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Sum of Array Product of Magical Sequences",
+      "slug": "find-sum-of-array-product-of-magical-sequences",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
