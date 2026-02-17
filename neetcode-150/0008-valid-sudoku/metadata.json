@@ -1,0 +1,37 @@
+{
+  "id": 8,
+  "title": "Valid Sudoku",
+  "slug": "valid-sudoku",
+  "url": "https://leetcode.com/problems/valid-sudoku/",
+  "difficulty": "Medium",
+  "acceptance_rate": 64.1,
+  "status": "solved",
+  "date_solved": "2026-02-17",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "matrix"
+  ],
+  "patterns": [
+    "arrays-and-hashing"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Sudoku Solver",
+      "slug": "sudoku-solver",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Check if Every Row and Column Contains All Numbers",
+      "slug": "check-if-every-row-and-column-contains-all-numbers",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
