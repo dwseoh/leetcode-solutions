@@ -1,0 +1,52 @@
+{
+  "id": 9,
+  "title": "Longest Consecutive Sequence",
+  "slug": "longest-consecutive-sequence",
+  "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+  "difficulty": "Medium",
+  "acceptance_rate": 47,
+  "status": "solved",
+  "date_solved": "2026-02-18",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "union-find"
+  ],
+  "patterns": [
+    "arrays-and-hashing"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Binary Tree Longest Consecutive Sequence",
+      "slug": "binary-tree-longest-consecutive-sequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Three Consecutive Integers That Sum to a Given Number",
+      "slug": "find-three-consecutive-integers-that-sum-to-a-given-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Consecutive Floors Without Special Floors",
+      "slug": "maximum-consecutive-floors-without-special-floors",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Length of the Longest Alphabetical Continuous Substring",
+      "slug": "length-of-the-longest-alphabetical-continuous-substring",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find the Maximum Number of Elements in Subset",
+      "slug": "find-the-maximum-number-of-elements-in-subset",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
