@@ -60,7 +60,7 @@ But then I realized a better solution with a hash set to store the numbers and t
 4. Keep track of the longest sequence found so far, return the longest length
 
 
-**Time Complexity:** `O(n^2)`  
+**Time Complexity:** `O(n)`  
 **Space Complexity:** `O(n)`
 
 ---

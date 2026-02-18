@@ -69,6 +69,7 @@ function estimateTime(code, lines, lang) {
     const maxLoopDepth = loopInfo.depth;
     const hasCharIteration = loopInfo.hasCharIteration;
     const hasBucketTraversal = loopInfo.hasBucketTraversal;
+    const hasAmortizedLinear = loopInfo.hasAmortizedLinear;
 
     const hasRecursion = detectRecursion(code, lang);
     const hasWhileHalving = /while\b[\s\S]*?(?:\/=?\s*2|>>=?\s*1)/.test(code);
@@ -97,7 +98,7 @@ function estimateTime(code, lines, lang) {
 
     if (maxLoopDepth === 0) return 'O(1)';
     if (maxLoopDepth === 1) return 'O(n)';
-    if (maxLoopDepth === 2 && hasBucketTraversal) return 'O(n)';
+    if (maxLoopDepth === 2 && (hasBucketTraversal || hasAmortizedLinear)) return 'O(n)';
     if (maxLoopDepth === 2 && hasCharIteration) return 'O(n * k)';
     if (maxLoopDepth === 2) return 'O(n^2)';
     return `O(n^${maxLoopDepth})`;
@@ -156,6 +157,7 @@ function getMaxLoopDepthPython(lines) {
     let loopVars = [];  // iteration variables at each loop level
     let hasCharIteration = false;
     let hasBucketTraversal = false;
+    let hasAmortizedLinear = false;
 
     for (const line of lines) {
         const stripped = line.trimEnd();
@@ -194,8 +196,16 @@ function getMaxLoopDepthPython(lines) {
             loopVars.push(varMatch ? varMatch[1] : null);
             maxDepth = Math.max(maxDepth, loopStack.length);
         }
+
+        // Detect amortized linear: while loop with hash set/dict lookup inside a for loop
+        // e.g., "while x in hashset:" or "while hashset[x]:"
+        if (/^while\s+/.test(trimmed) && trimmed.endsWith(':') && loopStack.length > 0) {
+            if (/\bin\b/.test(trimmed)) {
+                hasAmortizedLinear = true;
+            }
+        }
     }
-    return { depth: maxDepth, hasCharIteration, hasBucketTraversal };
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear };
 }
 
 function getMaxLoopDepthC(lines) {
@@ -205,6 +215,7 @@ function getMaxLoopDepthC(lines) {
     let loopVars = [];    // iteration variables at each loop level
     let hasCharIteration = false;
     let hasBucketTraversal = false;
+    let hasAmortizedLinear = false;
 
     for (const line of lines) {
         const trimmed = line.trim();
@@ -235,6 +246,14 @@ function getMaxLoopDepthC(lines) {
                 }
             }
 
+            // Detect amortized linear: while loop with hash set/map lookup inside a for loop
+            // e.g., "while (hash.count(...))" or "while (hash.find(...) != ...)"
+            if (/^\s*while\s*\(/.test(line) && braceDepths.length > 0) {
+                if (/\.count\s*\(|\.find\s*\(/.test(trimmed)) {
+                    hasAmortizedLinear = true;
+                }
+            }
+
             // Extract loop variable from range-based for
             const varMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+(\w+)\s*:/);
             braceDepths.push(currentDepth);
@@ -242,7 +261,7 @@ function getMaxLoopDepthC(lines) {
             maxDepth = Math.max(maxDepth, braceDepths.length);
         }
     }
-    return { depth: maxDepth, hasCharIteration, hasBucketTraversal };
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear };
 }
 
 // ───────────────────────────────────────────────
