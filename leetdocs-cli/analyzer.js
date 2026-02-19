@@ -70,9 +70,13 @@ function estimateTime(code, lines, lang) {
     const hasCharIteration = loopInfo.hasCharIteration;
     const hasBucketTraversal = loopInfo.hasBucketTraversal;
     const hasAmortizedLinear = loopInfo.hasAmortizedLinear;
+    const hasOnlyConstantLoops = loopInfo.hasOnlyConstantLoops;
 
     const hasRecursion = detectRecursion(code, lang);
     const hasWhileHalving = /while\b[\s\S]*?(?:\/=?\s*2|>>=?\s*1)/.test(code);
+
+    // If all loops have constant bounds, the entire algorithm is O(1)
+    if (hasOnlyConstantLoops && maxLoopDepth > 0) return 'O(1)';
 
     // Determine time complexity
     if (hasBinarySearch || hasManualBinarySearch || hasWhileHalving) {
@@ -109,11 +113,14 @@ function estimateTime(code, lines, lang) {
 // ───────────────────────────────────────────────
 
 function estimateSpace(code, lines, lang) {
-    if (lang === 'python') return estimateSpacePython(code);
-    return estimateSpaceC(code);
+    const loopInfo = lang === 'python'
+        ? getMaxLoopDepthPython(lines)
+        : getMaxLoopDepthC(lines);
+    if (lang === 'python') return estimateSpacePython(code, loopInfo.hasOnlyConstantLoops);
+    return estimateSpaceC(code, loopInfo.hasOnlyConstantLoops);
 }
 
-function estimateSpacePython(code) {
+function estimateSpacePython(code, hasOnlyConstantLoops = false) {
     const hasFixedArray = /\[\s*0\s*\]\s*\*\s*\d+/.test(code);
     const hasDict = /dict\(|{.*:.*}|\bdefaultdict\b/.test(code) || /\w+\s*=\s*\{\}/.test(code);
     const hasSet = /set\(/.test(code);
@@ -123,6 +130,9 @@ function estimateSpacePython(code) {
     // [[] for ...] which just creates a flat list of empty sublists (O(n))
     const has2D = /\[\s*\[/.test(code) && !/\[\s*\[\s*\]\s*(for|,)/.test(code);
 
+    // If all loops are constant-bound, containers populated inside them are O(1)
+    if (hasOnlyConstantLoops) return 'O(1)';
+
     if (has2D) return 'O(n * m)';
     if (hasDict || hasSet || hasList || hasDeque) return 'O(n)';
     if (hasFixedArray) return 'O(1)';
@@ -130,7 +140,7 @@ function estimateSpacePython(code) {
     return 'O(1)';
 }
 
-function estimateSpaceC(code) {
+function estimateSpaceC(code, hasOnlyConstantLoops = false) {
     const hasVector = /vector\s*</.test(code);
     const hasMap = /unordered_map|map\s*</.test(code);
     const hasSet = /unordered_set|set\s*</.test(code);
@@ -139,6 +149,9 @@ function estimateSpaceC(code) {
     const hasMalloc = /malloc\s*\(|calloc\s*\(|new\s+/.test(code);
     const has2D = /vector\s*<\s*vector/.test(code) || /\w+\s*\[.*\]\s*\[/.test(code);
     const hasFixedArray = /\w+\s*\[\s*\d+\s*\]/.test(code);
+
+    // If all loops are constant-bound, containers populated inside them are O(1)
+    if (hasOnlyConstantLoops) return 'O(1)';
 
     if (has2D) return 'O(n * m)';
     if (hasVector || hasMap || hasSet || hasStack || hasQueue || hasMalloc) return 'O(n)';
@@ -151,13 +164,29 @@ function estimateSpaceC(code) {
 //  LOOP DEPTH DETECTION
 // ───────────────────────────────────────────────
 
+// Check if a loop bound is a small constant (≤256), common fixed sizes in LeetCode
+function isConstantBound(value) {
+    const n = parseInt(value, 10);
+    return !isNaN(n) && n >= 0 && n <= 256;
+}
+
+// Extract variable names from a while condition for two-pointer detection
+function extractConditionVars(condition) {
+    return [...condition.matchAll(/\b([a-zA-Z_]\w*)\b/g)].map(m => m[1])
+        .filter(v => !['while', 'and', 'or', 'not', 'true', 'false', 'True', 'False'].includes(v));
+}
+
 function getMaxLoopDepthPython(lines) {
     let maxDepth = 0;
     let loopStack = []; // indent levels of active loops
     let loopVars = [];  // iteration variables at each loop level
+    let loopIsConstant = []; // whether each loop level has constant bounds
+    let loopConditions = []; // condition text of while loops
     let hasCharIteration = false;
     let hasBucketTraversal = false;
     let hasAmortizedLinear = false;
+    let totalLoops = 0;
+    let constantLoops = 0;
 
     for (const line of lines) {
         const stripped = line.trimEnd();
@@ -169,12 +198,22 @@ function getMaxLoopDepthPython(lines) {
         while (loopStack.length > 0 && indent <= loopStack[loopStack.length - 1]) {
             loopStack.pop();
             loopVars.pop();
+            loopIsConstant.pop();
+            loopConditions.pop();
         }
 
         if (/^(for|while)\s+/.test(trimmed) && trimmed.endsWith(':')) {
+            totalLoops++;
+            let isConstant = false;
+            let conditionText = '';
+
+            // Check for constant-bound for loops: "for x in range(CONST):"
+            const rangeConstMatch = trimmed.match(/^for\s+\w+\s+in\s+range\((\d+)\)\s*:$/);
+            if (rangeConstMatch && isConstantBound(rangeConstMatch[1])) {
+                isConstant = true;
+            }
+
             // Check if this inner loop iterates over an outer loop variable
-            // e.g., "for c in s:" where s is the iteration var of the outer loop
-            // Also check for bucket pattern: "for n in buckets[i]:" where i is the outer var
             const forMatch = trimmed.match(/^for\s+\w+\s+in\s+(\w+)\s*:$/);
             const bucketMatch = trimmed.match(/^for\s+\w+\s+in\s+\w+\[(\w+)\]\s*:$/);
             if (forMatch && loopVars.length > 0) {
@@ -190,22 +229,50 @@ function getMaxLoopDepthPython(lines) {
                 }
             }
 
-            // Extract the loop variable for "for X in ..." patterns
-            const varMatch = trimmed.match(/^for\s+(\w+)\s+in\s+/);
-            loopStack.push(indent);
-            loopVars.push(varMatch ? varMatch[1] : null);
-            maxDepth = Math.max(maxDepth, loopStack.length);
-        }
+            // Extract while condition for two-pointer detection
+            const whileMatch = trimmed.match(/^while\s+(.+)\s*:$/);
+            if (whileMatch) {
+                conditionText = whileMatch[1];
+                // Check for two-pointer: nested while sharing condition vars with outer while
+                if (loopConditions.length > 0) {
+                    const outerCond = loopConditions[loopConditions.length - 1];
+                    if (outerCond) {
+                        const outerVars = extractConditionVars(outerCond);
+                        const innerVars = extractConditionVars(conditionText);
+                        const shared = innerVars.filter(v => outerVars.includes(v));
+                        if (shared.length > 0) {
+                            hasAmortizedLinear = true;
+                        }
+                    }
+                }
+                // Also detect hash set/dict lookup pattern
+                if (loopStack.length > 0 && /\bin\b/.test(conditionText)) {
+                    hasAmortizedLinear = true;
+                }
+            }
 
-        // Detect amortized linear: while loop with hash set/dict lookup inside a for loop
-        // e.g., "while x in hashset:" or "while hashset[x]:"
-        if (/^while\s+/.test(trimmed) && trimmed.endsWith(':') && loopStack.length > 0) {
-            if (/\bin\b/.test(trimmed)) {
-                hasAmortizedLinear = true;
+            if (isConstant) {
+                constantLoops++;
+                // Don't count constant loops toward depth
+                loopStack.push(indent);
+                loopVars.push(null);
+                loopIsConstant.push(true);
+                loopConditions.push(conditionText);
+            } else {
+                const varMatch = trimmed.match(/^for\s+(\w+)\s+in\s+/);
+                loopStack.push(indent);
+                loopVars.push(varMatch ? varMatch[1] : null);
+                loopIsConstant.push(false);
+                loopConditions.push(conditionText);
+                // Only count non-constant loops toward depth
+                const nonConstDepth = loopIsConstant.filter(c => !c).length;
+                maxDepth = Math.max(maxDepth, nonConstDepth);
             }
         }
     }
-    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear };
+
+    const hasOnlyConstantLoops = totalLoops > 0 && constantLoops === totalLoops;
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear, hasOnlyConstantLoops };
 }
 
 function getMaxLoopDepthC(lines) {
@@ -213,9 +280,13 @@ function getMaxLoopDepthC(lines) {
     let currentDepth = 0;
     let braceDepths = []; // brace depth at each loop entry
     let loopVars = [];    // iteration variables at each loop level
+    let loopIsConstant = []; // whether each loop level has constant bounds
+    let loopConditions = []; // condition text of while loops
     let hasCharIteration = false;
     let hasBucketTraversal = false;
     let hasAmortizedLinear = false;
+    let totalLoops = 0;
+    let constantLoops = 0;
 
     for (const line of lines) {
         const trimmed = line.trim();
@@ -230,14 +301,25 @@ function getMaxLoopDepthC(lines) {
                 while (braceDepths.length > 0 && currentDepth < braceDepths[braceDepths.length - 1]) {
                     braceDepths.pop();
                     loopVars.pop();
+                    loopIsConstant.pop();
+                    loopConditions.pop();
                 }
             }
         }
 
         // Detect loop starts
         if (/^\s*(for|while)\s*\(/.test(line)) {
+            totalLoops++;
+            let isConstant = false;
+            let conditionText = '';
+
+            // Check for constant-bound for loops: "for (int i=0; i<9; i++)"
+            const forConstMatch = trimmed.match(/for\s*\([^;]*;[^;]*<\s*(\d+)\s*;/);
+            if (forConstMatch && isConstantBound(forConstMatch[1])) {
+                isConstant = true;
+            }
+
             // Check for range-based for loop iterating over outer variable
-            // e.g., "for (char c : s)" or "for (auto& x : word)"
             const rangeMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+\w+\s*:\s*(\w+)\s*\)/);
             if (rangeMatch && loopVars.length > 0) {
                 const iterTarget = rangeMatch[1];
@@ -246,22 +328,47 @@ function getMaxLoopDepthC(lines) {
                 }
             }
 
-            // Detect amortized linear: while loop with hash set/map lookup inside a for loop
-            // e.g., "while (hash.count(...))" or "while (hash.find(...) != ...)"
-            if (/^\s*while\s*\(/.test(line) && braceDepths.length > 0) {
-                if (/\.count\s*\(|\.find\s*\(/.test(trimmed)) {
+            // Extract while condition for two-pointer detection
+            const whileMatch = trimmed.match(/while\s*\((.+)\)\s*\{?$/);
+            if (whileMatch) {
+                conditionText = whileMatch[1];
+                // Check for two-pointer: nested while sharing condition vars with outer while
+                if (loopConditions.length > 0) {
+                    const outerCond = loopConditions[loopConditions.length - 1];
+                    if (outerCond) {
+                        const outerVars = extractConditionVars(outerCond);
+                        const innerVars = extractConditionVars(conditionText);
+                        const shared = innerVars.filter(v => outerVars.includes(v));
+                        if (shared.length > 0) {
+                            hasAmortizedLinear = true;
+                        }
+                    }
+                }
+                // Also detect hash set/map lookup pattern
+                if (braceDepths.length > 0 && (/\.count\s*\(|\.find\s*\(/.test(conditionText))) {
                     hasAmortizedLinear = true;
                 }
+            }
+
+            if (isConstant) {
+                constantLoops++;
             }
 
             // Extract loop variable from range-based for
             const varMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+(\w+)\s*:/);
             braceDepths.push(currentDepth);
             loopVars.push(varMatch ? varMatch[1] : null);
-            maxDepth = Math.max(maxDepth, braceDepths.length);
+            loopIsConstant.push(isConstant);
+            loopConditions.push(conditionText);
+
+            // Only count non-constant loops toward depth
+            const nonConstDepth = loopIsConstant.filter(c => !c).length;
+            maxDepth = Math.max(maxDepth, nonConstDepth);
         }
     }
-    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear };
+
+    const hasOnlyConstantLoops = totalLoops > 0 && constantLoops === totalLoops;
+    return { depth: maxDepth, hasCharIteration, hasBucketTraversal, hasAmortizedLinear, hasOnlyConstantLoops };
 }
 
 // ───────────────────────────────────────────────

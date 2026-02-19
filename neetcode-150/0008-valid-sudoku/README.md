@@ -4,7 +4,7 @@
 **Acceptance Rate:** `64.1%`  
 **Topics:** `array` `hash-map` `matrix`  
 **Companies:** `company1` `company2`  
-**Date Solved:** 2026-02-17  
+**Date Solved:** 2026-02-19  
 **Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/valid-sudoku/)
@@ -75,8 +75,8 @@ By setting the key to be [row/col/box][#][num_shown], I could use one unordered 
 2. Encode constraints as unique strings - for each digit, create 3 keys: row constraint "r{row}{digit}", column constraint "c{col}{digit}", and box constraint "b{row/3}{col/3}{digit}"
 3. Check duplicates with set - if any constraint key already exists in seen, return false; otherwise insert all 3 keys and continue
 
-**Time Complexity:** `O(n^2)`  
-**Space Complexity:** `O(n * m)`
+**Time Complexity:** `O(1)`  
+**Space Complexity:** `O(1)`
 
 ---
 

@@ -1,0 +1,54 @@
+{
+  "id": 10,
+  "title": "Valid Palindrome",
+  "slug": "valid-palindrome",
+  "url": "https://leetcode.com/problems/valid-palindrome/",
+  "difficulty": "Easy",
+  "acceptance_rate": 52.8,
+  "status": "solved",
+  "date_solved": "2026-02-19",
+  "attempts": 2,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "two-pointers",
+    "string"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Palindrome Linked List",
+      "slug": "palindrome-linked-list",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Valid Palindrome II",
+      "slug": "valid-palindrome-ii",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Maximum Product of the Length of Two Palindromic Subsequences",
+      "slug": "maximum-product-of-the-length-of-two-palindromic-subsequences",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find First Palindromic String in the Array",
+      "slug": "find-first-palindromic-string-in-the-array",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Valid Palindrome IV",
+      "slug": "valid-palindrome-iv",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Palindromes After Operations",
+      "slug": "maximum-palindromes-after-operations",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
