@@ -1,0 +1,40 @@
+{
+  "id": 11,
+  "title": "Two Sum II - Input Array Is Sorted",
+  "slug": "two-sum-ii-input-array-is-sorted",
+  "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+  "difficulty": "Medium",
+  "acceptance_rate": 64.6,
+  "status": "solved",
+  "date_solved": "2026-02-20",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "two-pointers",
+    "binary-search"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Two Sum",
+      "slug": "two-sum",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Two Sum IV - Input is a BST",
+      "slug": "two-sum-iv-input-is-a-bst",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Two Sum Less Than K",
+      "slug": "two-sum-less-than-k",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
