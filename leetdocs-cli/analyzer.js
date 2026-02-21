@@ -231,29 +231,41 @@ function getMaxLoopDepthPython(lines) {
 
             // Extract while condition for two-pointer detection
             const whileMatch = trimmed.match(/^while\s+(.+)\s*:$/);
+            let isAmortized = false;
             if (whileMatch) {
                 conditionText = whileMatch[1];
                 // Check for two-pointer: nested while sharing condition vars with outer while
                 if (loopConditions.length > 0) {
-                    const outerCond = loopConditions[loopConditions.length - 1];
-                    if (outerCond) {
-                        const outerVars = extractConditionVars(outerCond);
-                        const innerVars = extractConditionVars(conditionText);
-                        const shared = innerVars.filter(v => outerVars.includes(v));
-                        if (shared.length > 0) {
-                            hasAmortizedLinear = true;
+                    for (let ci = loopConditions.length - 1; ci >= 0; ci--) {
+                        const outerCond = loopConditions[ci];
+                        if (outerCond) {
+                            const outerVars = extractConditionVars(outerCond);
+                            const innerVars = extractConditionVars(conditionText);
+                            const shared = innerVars.filter(v => outerVars.includes(v));
+                            if (shared.length > 0) {
+                                hasAmortizedLinear = true;
+                                isAmortized = true;
+                                break;
+                            }
                         }
                     }
                 }
                 // Also detect hash set/dict lookup pattern
                 if (loopStack.length > 0 && /\bin\b/.test(conditionText)) {
                     hasAmortizedLinear = true;
+                    isAmortized = true;
                 }
             }
 
             if (isConstant) {
                 constantLoops++;
                 // Don't count constant loops toward depth
+                loopStack.push(indent);
+                loopVars.push(null);
+                loopIsConstant.push(true);
+                loopConditions.push(conditionText);
+            } else if (isAmortized) {
+                // Don't count amortized while loops toward depth
                 loopStack.push(indent);
                 loopVars.push(null);
                 loopIsConstant.push(true);
@@ -330,23 +342,29 @@ function getMaxLoopDepthC(lines) {
 
             // Extract while condition for two-pointer detection
             const whileMatch = trimmed.match(/while\s*\((.+)\)\s*\{?$/);
+            let isAmortized = false;
             if (whileMatch) {
                 conditionText = whileMatch[1];
                 // Check for two-pointer: nested while sharing condition vars with outer while
                 if (loopConditions.length > 0) {
-                    const outerCond = loopConditions[loopConditions.length - 1];
-                    if (outerCond) {
-                        const outerVars = extractConditionVars(outerCond);
-                        const innerVars = extractConditionVars(conditionText);
-                        const shared = innerVars.filter(v => outerVars.includes(v));
-                        if (shared.length > 0) {
-                            hasAmortizedLinear = true;
+                    for (let ci = loopConditions.length - 1; ci >= 0; ci--) {
+                        const outerCond = loopConditions[ci];
+                        if (outerCond) {
+                            const outerVars = extractConditionVars(outerCond);
+                            const innerVars = extractConditionVars(conditionText);
+                            const shared = innerVars.filter(v => outerVars.includes(v));
+                            if (shared.length > 0) {
+                                hasAmortizedLinear = true;
+                                isAmortized = true;
+                                break;
+                            }
                         }
                     }
                 }
                 // Also detect hash set/map lookup pattern
                 if (braceDepths.length > 0 && (/\.count\s*\(|\.find\s*\(/.test(conditionText))) {
                     hasAmortizedLinear = true;
+                    isAmortized = true;
                 }
             }
 
@@ -358,10 +376,10 @@ function getMaxLoopDepthC(lines) {
             const varMatch = trimmed.match(/for\s*\(\s*(?:auto|char|int|const\s+auto)\s*&?\s+(\w+)\s*:/);
             braceDepths.push(currentDepth);
             loopVars.push(varMatch ? varMatch[1] : null);
-            loopIsConstant.push(isConstant);
+            loopIsConstant.push(isConstant || isAmortized);
             loopConditions.push(conditionText);
 
-            // Only count non-constant loops toward depth
+            // Only count non-constant, non-amortized loops toward depth
             const nonConstDepth = loopIsConstant.filter(c => !c).length;
             maxDepth = Math.max(maxDepth, nonConstDepth);
         }

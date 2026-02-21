@@ -10,7 +10,7 @@
   "attempts": 1,
   "complexity": {
     "time": "O(n)",
-    "space": "O(n)"
+    "space": "O(1)"
   },
   "topics": [
     "array",
