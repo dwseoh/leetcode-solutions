@@ -176,6 +176,22 @@ function extractConditionVars(condition) {
         .filter(v => !['while', 'and', 'or', 'not', 'true', 'false', 'True', 'False'].includes(v));
 }
 
+// Extract the condition from a while statement using balanced paren matching
+function extractWhileCondition(trimmedLine) {
+    const m = trimmedLine.match(/while\s*\(/);
+    if (!m) return null;
+    let start = m.index + m[0].length;
+    let depth = 1;
+    let i = start;
+    while (i < trimmedLine.length && depth > 0) {
+        if (trimmedLine[i] === '(') depth++;
+        if (trimmedLine[i] === ')') depth--;
+        i++;
+    }
+    if (depth === 0) return trimmedLine.substring(start, i - 1);
+    return null;
+}
+
 function getMaxLoopDepthPython(lines) {
     let maxDepth = 0;
     let loopStack = []; // indent levels of active loops
@@ -341,10 +357,10 @@ function getMaxLoopDepthC(lines) {
             }
 
             // Extract while condition for two-pointer detection
-            const whileMatch = trimmed.match(/while\s*\((.+)\)\s*\{?$/);
+            const whileCondition = /^\s*while\s*\(/.test(line) ? extractWhileCondition(trimmed) : null;
             let isAmortized = false;
-            if (whileMatch) {
-                conditionText = whileMatch[1];
+            if (whileCondition !== null) {
+                conditionText = whileCondition;
                 // Check for two-pointer: nested while sharing condition vars with outer while
                 if (loopConditions.length > 0) {
                     for (let ci = loopConditions.length - 1; ci >= 0; ci--) {

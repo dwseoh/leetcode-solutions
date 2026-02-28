@@ -1,0 +1,40 @@
+{
+  "id": 13,
+  "title": "Container With Most Water",
+  "slug": "container-with-most-water",
+  "url": "https://leetcode.com/problems/container-with-most-water/",
+  "difficulty": "Medium",
+  "acceptance_rate": 59.6,
+  "status": "solved",
+  "date_solved": "2026-02-28",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "two-pointers",
+    "greedy"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Trapping Rain Water",
+      "slug": "trapping-rain-water",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Tastiness of Candy Basket",
+      "slug": "maximum-tastiness-of-candy-basket",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber IV",
+      "slug": "house-robber-iv",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
