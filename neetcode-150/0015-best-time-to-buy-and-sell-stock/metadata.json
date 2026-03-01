@@ -1,0 +1,69 @@
+{
+  "id": 15,
+  "title": "Best Time to Buy and Sell Stock",
+  "slug": "best-time-to-buy-and-sell-stock",
+  "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+  "difficulty": "Easy",
+  "acceptance_rate": 56.4,
+  "status": "solved",
+  "date_solved": "2026-03-01",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Maximum Subarray",
+      "slug": "maximum-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock II",
+      "slug": "best-time-to-buy-and-sell-stock-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock III",
+      "slug": "best-time-to-buy-and-sell-stock-iii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock IV",
+      "slug": "best-time-to-buy-and-sell-stock-iv",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock with Cooldown",
+      "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Sum of Beauty in the Array",
+      "slug": "sum-of-beauty-in-the-array",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Difference Between Increasing Elements",
+      "slug": "maximum-difference-between-increasing-elements",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Maximum Profit From Trading Stocks",
+      "slug": "maximum-profit-from-trading-stocks",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock V",
+      "slug": "best-time-to-buy-and-sell-stock-v",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
