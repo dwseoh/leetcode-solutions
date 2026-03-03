@@ -1,0 +1,36 @@
+{
+  "id": 18,
+  "title": "Permutation in String",
+  "slug": "permutation-in-string",
+  "url": "https://leetcode.com/problems/permutation-in-string/",
+  "difficulty": "Medium",
+  "acceptance_rate": 48.5,
+  "status": "solved",
+  "date_solved": "2026-03-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "hash-map",
+    "two-pointers",
+    "string",
+    "sliding-window"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimum Window Substring",
+      "slug": "minimum-window-substring",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find All Anagrams in a String",
+      "slug": "find-all-anagrams-in-a-string",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
