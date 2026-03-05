@@ -1,0 +1,54 @@
+{
+  "id": 21,
+  "title": "Valid Parentheses",
+  "slug": "valid-parentheses",
+  "url": "https://leetcode.com/problems/valid-parentheses/",
+  "difficulty": "Easy",
+  "acceptance_rate": 43.8,
+  "status": "solved",
+  "date_solved": "2026-03-05",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "string",
+    "stack"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Generate Parentheses",
+      "slug": "generate-parentheses",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Longest Valid Parentheses",
+      "slug": "longest-valid-parentheses",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Remove Invalid Parentheses",
+      "slug": "remove-invalid-parentheses",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Check If Word Is Valid After Substitutions",
+      "slug": "check-if-word-is-valid-after-substitutions",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Check if a Parentheses String Can Be Valid",
+      "slug": "check-if-a-parentheses-string-can-be-valid",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Move Pieces to Obtain a String",
+      "slug": "move-pieces-to-obtain-a-string",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
