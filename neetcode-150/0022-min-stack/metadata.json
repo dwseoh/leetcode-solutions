@@ -1,0 +1,34 @@
+{
+  "id": 22,
+  "title": "Min Stack",
+  "slug": "min-stack",
+  "url": "https://leetcode.com/problems/min-stack/",
+  "difficulty": "Medium",
+  "acceptance_rate": 57.8,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "stack",
+    "design"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Sliding Window Maximum",
+      "slug": "sliding-window-maximum",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Max Stack",
+      "slug": "max-stack",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
