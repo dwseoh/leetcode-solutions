@@ -271,6 +271,11 @@ function getMaxLoopDepthPython(lines) {
                     hasAmortizedLinear = true;
                     isAmortized = true;
                 }
+                // Detect stack/deque amortized pattern: while loop with stack/deque ops inside a for
+                if (loopStack.length > 0 && /\bstack\b|\bpop\b|\bappend\b|\bpopleft\b|\blen\s*\(/.test(conditionText)) {
+                    hasAmortizedLinear = true;
+                    isAmortized = true;
+                }
             }
 
             if (isConstant) {
@@ -379,6 +384,11 @@ function getMaxLoopDepthC(lines) {
                 }
                 // Also detect hash set/map lookup pattern
                 if (braceDepths.length > 0 && (/\.count\s*\(|\.find\s*\(/.test(conditionText))) {
+                    hasAmortizedLinear = true;
+                    isAmortized = true;
+                }
+                // Detect stack/queue amortized pattern: while loop with .empty()/.top()/.pop() inside a for
+                if (braceDepths.length > 0 && /\.empty\s*\(|\.top\s*\(|\.front\s*\(|\.back\s*\(|\.pop\s*\(/.test(conditionText)) {
                     hasAmortizedLinear = true;
                     isAmortized = true;
                 }
