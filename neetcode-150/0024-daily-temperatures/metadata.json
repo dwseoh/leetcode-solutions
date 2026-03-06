@@ -7,9 +7,9 @@
   "acceptance_rate": 68.4,
   "status": "solved",
   "date_solved": "2026-03-06",
-  "attempts": 1,
+  "attempts": 2,
   "complexity": {
-    "time": "O(n^2)",
+    "time": "O(n)",
     "space": "O(n)"
   },
   "topics": [
