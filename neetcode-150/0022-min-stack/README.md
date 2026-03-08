@@ -4,8 +4,8 @@
 **Acceptance Rate:** `57.8%`  
 **Topics:** `stack` `design`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-03-08  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/min-stack/)
 
@@ -62,19 +62,32 @@ I recognized it was a stack problem.
 
 1. Use OOP to create a stack class
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(n)`
 
 ---
 
 ## Solution
 
-```cpp
-// C++ solution
+```python
+class MinStack:
 
+    def __init__(self):
+        self._items = []
 
+    def push(self, val: int) -> None:
+        self._items.append(val)
+
+    def pop(self) -> None:
+        self._items.pop(-1)
+        
+
+    def top(self) -> int:
+        return self._items[-1]
+
+    def getMin(self) -> int:
+        return min(self._items)
 ```
-
 ---
 
 ## Alternative Approaches

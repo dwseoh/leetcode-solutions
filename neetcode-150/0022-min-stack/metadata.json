@@ -5,12 +5,12 @@
   "url": "https://leetcode.com/problems/min-stack/",
   "difficulty": "Medium",
   "acceptance_rate": 57.8,
-  "status": "unsolved",
-  "date_solved": "YYYY-MM-DD",
-  "attempts": 0,
+  "status": "solved",
+  "date_solved": "2026-03-08",
+  "attempts": 1,
   "complexity": {
-    "time": "O()",
-    "space": "O()"
+    "time": "O(n)",
+    "space": "O(n)"
   },
   "topics": [
     "stack",
