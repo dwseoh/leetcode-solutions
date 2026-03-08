@@ -1,0 +1,35 @@
+{
+  "id": 28,
+  "title": "Search a 2D Matrix",
+  "slug": "search-a-2d-matrix",
+  "url": "https://leetcode.com/problems/search-a-2d-matrix/",
+  "difficulty": "Medium",
+  "acceptance_rate": 53.6,
+  "status": "solved",
+  "date_solved": "2026-03-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "binary-search",
+    "matrix"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Search a 2D Matrix II",
+      "slug": "search-a-2d-matrix-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Split Message Based on Limit",
+      "slug": "split-message-based-on-limit",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
