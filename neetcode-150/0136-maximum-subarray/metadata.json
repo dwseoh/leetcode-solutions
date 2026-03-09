@@ -1,0 +1,95 @@
+{
+  "id": 136,
+  "title": "Maximum Subarray",
+  "slug": "maximum-subarray",
+  "url": "https://leetcode.com/problems/maximum-subarray/",
+  "difficulty": "Medium",
+  "acceptance_rate": 53,
+  "status": "solved",
+  "date_solved": "2026-03-09",
+  "attempts": 2,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "divide-and-conquer",
+    "dynamic-programming"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Best Time to Buy and Sell Stock",
+      "slug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Maximum Product Subarray",
+      "slug": "maximum-product-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Degree of an Array",
+      "slug": "degree-of-an-array",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Longest Turbulent Subarray",
+      "slug": "longest-turbulent-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Score Of Spliced Array",
+      "slug": "maximum-score-of-spliced-array",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Absolute Sum of Any Subarray",
+      "slug": "maximum-absolute-sum-of-any-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Subarray Sum After One Operation",
+      "slug": "maximum-subarray-sum-after-one-operation",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Substring With Largest Variance",
+      "slug": "substring-with-largest-variance",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Subarrays With Score Less Than K",
+      "slug": "count-subarrays-with-score-less-than-k",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Value of a String in an Array",
+      "slug": "maximum-value-of-a-string-in-an-array",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the Substring With Maximum Cost",
+      "slug": "find-the-substring-with-maximum-cost",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "K Items With the Maximum Sum",
+      "slug": "k-items-with-the-maximum-sum",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Maximum Good Subarray Sum",
+      "slug": "maximum-good-subarray-sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximize Subarray Sum After Removing All Occurrences of One Element",
+      "slug": "maximize-subarray-sum-after-removing-all-occurrences-of-one-element",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
