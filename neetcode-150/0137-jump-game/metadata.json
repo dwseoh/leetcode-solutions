@@ -1,0 +1,57 @@
+{
+  "id": 137,
+  "title": "Jump Game",
+  "slug": "jump-game",
+  "url": "https://leetcode.com/problems/jump-game/",
+  "difficulty": "Medium",
+  "acceptance_rate": 40.5,
+  "status": "solved",
+  "date_solved": "2026-03-10",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "greedy"
+  ],
+  "patterns": [
+    "greedy"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Jump Game II",
+      "slug": "jump-game-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game III",
+      "slug": "jump-game-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game VII",
+      "slug": "jump-game-vii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game VIII",
+      "slug": "jump-game-viii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Number of Visited Cells in a Grid",
+      "slug": "minimum-number-of-visited-cells-in-a-grid",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Largest Element in an Array after Merge Operations",
+      "slug": "largest-element-in-an-array-after-merge-operations",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
