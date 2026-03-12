@@ -1,0 +1,107 @@
+{
+  "id": 123,
+  "title": "Longest Increasing Subsequence",
+  "slug": "longest-increasing-subsequence",
+  "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+  "difficulty": "Medium",
+  "acceptance_rate": 59.1,
+  "status": "solved",
+  "date_solved": "2026-03-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(n^2)"
+  },
+  "topics": [
+    "array",
+    "binary-search",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Increasing Triplet Subsequence",
+      "slug": "increasing-triplet-subsequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Russian Doll Envelopes",
+      "slug": "russian-doll-envelopes",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Length of Pair Chain",
+      "slug": "maximum-length-of-pair-chain",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of Longest Increasing Subsequence",
+      "slug": "number-of-longest-increasing-subsequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum ASCII Delete Sum for Two Strings",
+      "slug": "minimum-ascii-delete-sum-for-two-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Number of Removals to Make Mountain Array",
+      "slug": "minimum-number-of-removals-to-make-mountain-array",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find the Longest Valid Obstacle Course at Each Position",
+      "slug": "find-the-longest-valid-obstacle-course-at-each-position",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Operations to Make the Array K-Increasing",
+      "slug": "minimum-operations-to-make-the-array-k-increasing",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Longest Ideal Subsequence",
+      "slug": "longest-ideal-subsequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Number of Books You Can Take",
+      "slug": "maximum-number-of-books-you-can-take",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Longest Increasing Subsequence II",
+      "slug": "longest-increasing-subsequence-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find the Maximum Length of a Good Subsequence II",
+      "slug": "find-the-maximum-length-of-a-good-subsequence-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find the Maximum Length of a Good Subsequence I",
+      "slug": "find-the-maximum-length-of-a-good-subsequence-i",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find the Maximum Length of Valid Subsequence I",
+      "slug": "find-the-maximum-length-of-valid-subsequence-i",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find the Maximum Length of Valid Subsequence II",
+      "slug": "find-the-maximum-length-of-valid-subsequence-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Longest Subsequence With Decreasing Adjacent Difference",
+      "slug": "longest-subsequence-with-decreasing-adjacent-difference",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
