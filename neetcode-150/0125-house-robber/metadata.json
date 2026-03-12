@@ -1,0 +1,94 @@
+{
+  "id": 125,
+  "title": "House Robber",
+  "slug": "house-robber",
+  "url": "https://leetcode.com/problems/house-robber/",
+  "difficulty": "Medium",
+  "acceptance_rate": 53,
+  "status": "solved",
+  "date_solved": "2026-03-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Maximum Product Subarray",
+      "slug": "maximum-product-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber II",
+      "slug": "house-robber-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Paint House",
+      "slug": "paint-house",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Paint Fence",
+      "slug": "paint-fence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber III",
+      "slug": "house-robber-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Non-negative Integers without Consecutive Ones",
+      "slug": "non-negative-integers-without-consecutive-ones",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Coin Path",
+      "slug": "coin-path",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Delete and Earn",
+      "slug": "delete-and-earn",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Solving Questions With Brainpower",
+      "slug": "solving-questions-with-brainpower",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Number of Ways to Place Houses",
+      "slug": "count-number-of-ways-to-place-houses",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber IV",
+      "slug": "house-robber-iv",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Mice and Cheese",
+      "slug": "mice-and-cheese",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Largest Element in an Array after Merge Operations",
+      "slug": "largest-element-in-an-array-after-merge-operations",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber V",
+      "slug": "house-robber-v",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
