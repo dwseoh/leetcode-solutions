@@ -1,0 +1,61 @@
+{
+  "id": 62,
+  "title": "K Closest Points to Origin",
+  "slug": "k-closest-points-to-origin",
+  "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+  "difficulty": "Medium",
+  "acceptance_rate": 68.8,
+  "status": "solved",
+  "date_solved": "2026-03-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log k)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "math",
+    "divide-and-conquer",
+    "geometry",
+    "sorting",
+    "heap",
+    "quickselect"
+  ],
+  "patterns": [
+    "heap"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Kth Largest Element in an Array",
+      "slug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Top K Frequent Elements",
+      "slug": "top-k-frequent-elements",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Top K Frequent Words",
+      "slug": "top-k-frequent-words",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Nearest Point That Has the Same X or Y Coordinate",
+      "slug": "find-nearest-point-that-has-the-same-x-or-y-coordinate",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Rectangles to Cover Points",
+      "slug": "minimum-rectangles-to-cover-points",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "K-th Nearest Obstacle Queries",
+      "slug": "k-th-nearest-obstacle-queries",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
