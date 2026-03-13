@@ -1,4 +1,4 @@
-# 137. Jump Game
+# 123. Jump Game
 
 **Difficulty:** `Medium`  
 **Acceptance Rate:** `40.5%`  

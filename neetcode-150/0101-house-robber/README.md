@@ -1,4 +1,4 @@
-# 125. House Robber
+# 101. House Robber
 
 **Difficulty:** `Medium`  
 **Acceptance Rate:** `53%`  

@@ -1,4 +1,4 @@
-# 123. Longest Increasing Subsequence
+# 109. Longest Increasing Subsequence
 
 **Difficulty:** `Medium`  
 **Acceptance Rate:** `59.1%`  

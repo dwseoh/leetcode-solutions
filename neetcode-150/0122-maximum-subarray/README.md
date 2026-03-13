@@ -1,4 +1,4 @@
-# 136. Maximum Subarray
+# 122. Maximum Subarray
 
 **Difficulty:** `Medium`  
 **Acceptance Rate:** `53%`  
