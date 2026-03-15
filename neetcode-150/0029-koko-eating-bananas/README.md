@@ -61,8 +61,8 @@ Binary search but I was not sure how to set the bounds.
 5. Repeat until left == right
 6. Return left (or right, as this is the most optimal)
 
-**Time Complexity:** `O(n log m)`  
-**Space Complexity:** `O(1)`
+**Time Complexity:** `O(n log n)`  
+**Space Complexity:** `O(n)`
 
 ---
 

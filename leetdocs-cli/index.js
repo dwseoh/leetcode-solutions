@@ -411,13 +411,15 @@ program
   .command('viz')
   .description('Generate a visual roadmap of your progress')
   .action(async () => {
-    const { generateVisualization } = await import('./visualizer.js');
+    const { generateVisualization, printTerminalDashboard } = await import('./visualizer.js');
     const problems = await loadAllMetadata();
 
     if (problems.length === 0) {
       console.log(chalk.yellow('No problems found.'));
       return;
     }
+
+    printTerminalDashboard(problems);
 
     const config = await loadConfig();
     const outputDir = config.neetcode?.directory || config.leetcode?.directory || __dirname;

@@ -7,10 +7,10 @@
   "acceptance_rate": 49.8,
   "status": "solved",
   "date_solved": "2026-03-15",
-  "attempts": 1,
+  "attempts": 2,
   "complexity": {
-    "time": "O(n log m)",
-    "space": "O(1)"
+    "time": "O(n log n)",
+    "space": "O(n)"
   },
   "topics": [
     "array",
