@@ -1,0 +1,51 @@
+{
+  "id": 29,
+  "title": "Koko Eating Bananas",
+  "slug": "koko-eating-bananas",
+  "url": "https://leetcode.com/problems/koko-eating-bananas/",
+  "difficulty": "Medium",
+  "acceptance_rate": 49.8,
+  "status": "solved",
+  "date_solved": "2026-03-15",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log m)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "binary-search"
+  ],
+  "patterns": [
+    "binary-search"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimize Max Distance to Gas Station",
+      "slug": "minimize-max-distance-to-gas-station",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Candies Allocated to K Children",
+      "slug": "maximum-candies-allocated-to-k-children",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimized Maximum of Products Distributed to Any Store",
+      "slug": "minimized-maximum-of-products-distributed-to-any-store",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Frog Jump II",
+      "slug": "frog-jump-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Time to Repair Cars",
+      "slug": "minimum-time-to-repair-cars",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
