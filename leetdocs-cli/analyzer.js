@@ -88,7 +88,18 @@ function estimateTime(code, lines, lang) {
     // - O(n log n) if there are also linear for-loops (e.g. binary search on answer
     //   where each step calls an O(n) helper) or if sorting is also present
     if (hasBinarySearch) {
-        if (hasSorting || hasForLoop) return 'O(n log n)';
+        if (hasSorting || hasForLoop) {
+            // Binary search on value range (e.g. "binary search on answer"):
+            // right/hi is set to the max element value, not array size → O(n log m)
+            const isBSOnValueRange =
+                /\*\s*max_element\s*\(/.test(code) ||
+                /right\s*=\s*\*max_element/.test(code) ||
+                (/(?:int|long)\s+\w*[Mm]ax\w*\s*=/.test(code) && /right\s*=\s*\w*[Mm]ax\w*\b/.test(code)) ||
+                // Python: right = max(piles) or similar
+                /(?:right|hi)\s*=\s*max\s*\(/.test(code);
+            if (isBSOnValueRange) return 'O(n log m)';
+            return 'O(n log n)';
+        }
         return 'O(log n)';
     }
 
@@ -215,7 +226,14 @@ function estimateSpaceC(code, hasOnlyConstantLoops = false) {
     const hasCharKeyedMap = /(?:unordered_map|map)\s*<\s*char\s*,/.test(code);
     const hasCharKeyedSet = /(?:unordered_set|set)\s*<\s*char\s*>/.test(code);
 
-    const hasVector = /vector\s*</.test(code);
+    // Only count vector as allocated space if it's not a reference/pointer parameter
+    // e.g. "vector<int>& piles" is a ref param → no allocation; "vector<int> res" is
+    const hasVector = code.split('\n').some(line => {
+        if (!/vector\s*</.test(line)) return false;
+        // Exclude lines where vector<...> is immediately followed by & or * (ref/ptr param)
+        if (/vector\s*<[^;{=\n]*>\s*[&*]/.test(line)) return false;
+        return true;
+    });
     const hasMap = /unordered_map|map\s*</.test(code);
     const hasSet = /unordered_set|set\s*</.test(code);
     const hasStack = /stack\s*</.test(code);
