@@ -1,0 +1,36 @@
+{
+  "id": 30,
+  "title": "Find Minimum in Rotated Sorted Array",
+  "slug": "find-minimum-in-rotated-sorted-array",
+  "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+  "difficulty": "Medium",
+  "acceptance_rate": 53.9,
+  "status": "solved",
+  "date_solved": "2026-03-16",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "binary-search"
+  ],
+  "patterns": [
+    "binary-search"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Search in Rotated Sorted Array",
+      "slug": "search-in-rotated-sorted-array",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Minimum in Rotated Sorted Array II",
+      "slug": "find-minimum-in-rotated-sorted-array-ii",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
