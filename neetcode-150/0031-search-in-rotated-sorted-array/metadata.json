@@ -1,0 +1,39 @@
+{
+  "id": 31,
+  "title": "Search in Rotated Sorted Array",
+  "slug": "search-in-rotated-sorted-array",
+  "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+  "difficulty": "Medium",
+  "acceptance_rate": 44.2,
+  "status": "solved",
+  "date_solved": "2026-03-17",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "binary-search"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Search in Rotated Sorted Array II",
+      "slug": "search-in-rotated-sorted-array-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Minimum in Rotated Sorted Array",
+      "slug": "find-minimum-in-rotated-sorted-array",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Pour Water Between Buckets to Make Water Levels Equal",
+      "slug": "pour-water-between-buckets-to-make-water-levels-equal",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
