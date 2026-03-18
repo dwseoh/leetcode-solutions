@@ -1,0 +1,33 @@
+{
+  "id": 32,
+  "title": "Time Based Key-Value Store",
+  "slug": "time-based-key-value-store",
+  "url": "https://leetcode.com/problems/time-based-key-value-store/",
+  "difficulty": "Medium",
+  "acceptance_rate": 49.8,
+  "status": "solved",
+  "date_solved": "2026-03-18",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(n^2)"
+  },
+  "topics": [
+    "hash-map",
+    "string",
+    "binary-search",
+    "design"
+  ],
+  "patterns": [
+    "binary-search"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Stock Price Fluctuation ",
+      "slug": "stock-price-fluctuation",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
