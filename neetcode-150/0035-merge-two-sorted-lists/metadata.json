@@ -1,0 +1,59 @@
+{
+  "id": 35,
+  "title": "Merge Two Sorted Lists",
+  "slug": "merge-two-sorted-lists",
+  "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+  "difficulty": "Easy",
+  "acceptance_rate": 68,
+  "status": "solved",
+  "date_solved": "2026-03-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n + m)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "linked-list",
+    "recursion"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Merge k Sorted Lists",
+      "slug": "merge-k-sorted-lists",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Merge Sorted Array",
+      "slug": "merge-sorted-array",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Sort List",
+      "slug": "sort-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Shortest Word Distance II",
+      "slug": "shortest-word-distance-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add Two Polynomials Represented as Linked Lists",
+      "slug": "add-two-polynomials-represented-as-linked-lists",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Longest Common Subsequence Between Sorted Arrays",
+      "slug": "longest-common-subsequence-between-sorted-arrays",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Merge Two 2D Arrays by Summing Values",
+      "slug": "merge-two-2d-arrays-by-summing-values",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
