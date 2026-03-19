@@ -1,0 +1,35 @@
+{
+  "id": 36,
+  "title": "Linked List Cycle",
+  "slug": "linked-list-cycle",
+  "url": "https://leetcode.com/problems/linked-list-cycle/",
+  "difficulty": "Easy",
+  "acceptance_rate": 54,
+  "status": "solved",
+  "date_solved": "2026-03-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "hash-map",
+    "linked-list",
+    "two-pointers"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Linked List Cycle II",
+      "slug": "linked-list-cycle-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Happy Number",
+      "slug": "happy-number",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
