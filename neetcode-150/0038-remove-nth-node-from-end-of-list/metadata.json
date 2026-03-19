@@ -1,0 +1,39 @@
+{
+  "id": 38,
+  "title": "Remove Nth Node From End of List",
+  "slug": "remove-nth-node-from-end-of-list",
+  "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+  "difficulty": "Medium",
+  "acceptance_rate": 51.2,
+  "status": "solved",
+  "date_solved": "2026-03-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "linked-list",
+    "two-pointers"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Swapping Nodes in a Linked List",
+      "slug": "swapping-nodes-in-a-linked-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Delete N Nodes After M Nodes of a Linked List",
+      "slug": "delete-n-nodes-after-m-nodes-of-a-linked-list",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Delete the Middle Node of a Linked List",
+      "slug": "delete-the-middle-node-of-a-linked-list",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
