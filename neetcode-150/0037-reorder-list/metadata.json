@@ -1,0 +1,36 @@
+{
+  "id": 37,
+  "title": "Reorder List",
+  "slug": "reorder-list",
+  "url": "https://leetcode.com/problems/reorder-list/",
+  "difficulty": "Medium",
+  "acceptance_rate": 64.8,
+  "status": "solved",
+  "date_solved": "2026-03-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "linked-list",
+    "two-pointers",
+    "stack",
+    "recursion"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Delete the Middle Node of a Linked List",
+      "slug": "delete-the-middle-node-of-a-linked-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Take K of Each Character From Left and Right",
+      "slug": "take-k-of-each-character-from-left-and-right",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
