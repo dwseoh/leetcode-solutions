@@ -1,0 +1,59 @@
+{
+  "id": 34,
+  "title": "Reverse Linked List",
+  "slug": "reverse-linked-list",
+  "url": "https://leetcode.com/problems/reverse-linked-list/",
+  "difficulty": "Easy",
+  "acceptance_rate": 80.4,
+  "status": "solved",
+  "date_solved": "2026-03-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "linked-list",
+    "recursion"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Reverse Linked List II",
+      "slug": "reverse-linked-list-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Binary Tree Upside Down",
+      "slug": "binary-tree-upside-down",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Palindrome Linked List",
+      "slug": "palindrome-linked-list",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Reverse Nodes in Even Length Groups",
+      "slug": "reverse-nodes-in-even-length-groups",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Twin Sum of a Linked List",
+      "slug": "maximum-twin-sum-of-a-linked-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Remove Nodes From Linked List",
+      "slug": "remove-nodes-from-linked-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Insert Greatest Common Divisors in Linked List",
+      "slug": "insert-greatest-common-divisors-in-linked-list",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
