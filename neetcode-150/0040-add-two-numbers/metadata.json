@@ -1,0 +1,67 @@
+{
+  "id": 40,
+  "title": "Add Two Numbers",
+  "slug": "add-two-numbers",
+  "url": "https://leetcode.com/problems/add-two-numbers/",
+  "difficulty": "Medium",
+  "acceptance_rate": 48.1,
+  "status": "solved",
+  "date_solved": "2026-03-20",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "linked-list",
+    "math",
+    "recursion"
+  ],
+  "patterns": [
+    "linked-list"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Multiply Strings",
+      "slug": "multiply-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add Binary",
+      "slug": "add-binary",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Sum of Two Integers",
+      "slug": "sum-of-two-integers",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add Strings",
+      "slug": "add-strings",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Two Numbers II",
+      "slug": "add-two-numbers-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add to Array-Form of Integer",
+      "slug": "add-to-array-form-of-integer",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Two Polynomials Represented as Linked Lists",
+      "slug": "add-two-polynomials-represented-as-linked-lists",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Double a Number Represented as a Linked List",
+      "slug": "double-a-number-represented-as-a-linked-list",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
