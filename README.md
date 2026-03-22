@@ -28,3 +28,9 @@ leetdocs done [problem_id] -n
 ```
 
 to run complexity analysis + autofill some parts of the metadata + README for the problem
+
+Other commands:
+```bash
+leetdocs search [params] # search w/ keywords, filters, etc
+leetdocs viz # visualizes your leetcode journey on CLI & web 
+```
