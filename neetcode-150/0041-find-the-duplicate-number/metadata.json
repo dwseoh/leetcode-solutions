@@ -1,0 +1,51 @@
+{
+  "id": 41,
+  "title": "Find the Duplicate Number",
+  "slug": "find-the-duplicate-number",
+  "url": "https://leetcode.com/problems/find-the-duplicate-number/",
+  "difficulty": "Medium",
+  "acceptance_rate": 64.1,
+  "status": "solved",
+  "date_solved": "2026-03-22",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "two-pointers",
+    "binary-search",
+    "bit-manipulation"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "First Missing Positive",
+      "slug": "first-missing-positive",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Single Number",
+      "slug": "single-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Linked List Cycle II",
+      "slug": "linked-list-cycle-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Missing Number",
+      "slug": "missing-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Set Mismatch",
+      "slug": "set-mismatch",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
