@@ -1,0 +1,31 @@
+{
+  "id": 45,
+  "title": "Invert Binary Tree",
+  "slug": "invert-binary-tree",
+  "url": "https://leetcode.com/problems/invert-binary-tree/",
+  "difficulty": "Easy",
+  "acceptance_rate": 79.9,
+  "status": "solved",
+  "date_solved": "2026-03-23",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Reverse Odd Levels of Binary Tree",
+      "slug": "reverse-odd-levels-of-binary-tree",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
