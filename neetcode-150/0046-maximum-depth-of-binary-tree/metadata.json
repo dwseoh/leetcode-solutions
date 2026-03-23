@@ -1,0 +1,58 @@
+{
+  "id": 46,
+  "title": "Maximum Depth of Binary Tree",
+  "slug": "maximum-depth-of-binary-tree",
+  "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+  "difficulty": "Easy",
+  "acceptance_rate": 78,
+  "status": "solved",
+  "date_solved": "2026-03-23",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [
+    "tree"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Balanced Binary Tree",
+      "slug": "balanced-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Depth of Binary Tree",
+      "slug": "minimum-depth-of-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Maximum Depth of N-ary Tree",
+      "slug": "maximum-depth-of-n-ary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Time Needed to Inform All Employees",
+      "slug": "time-needed-to-inform-all-employees",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Amount of Time for Binary Tree to Be Infected",
+      "slug": "amount-of-time-for-binary-tree-to-be-infected",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Height of Binary Tree After Subtree Removal Queries",
+      "slug": "height-of-binary-tree-after-subtree-removal-queries",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
