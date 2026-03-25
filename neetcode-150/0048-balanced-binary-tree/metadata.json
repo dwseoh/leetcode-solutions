@@ -1,0 +1,42 @@
+{
+  "id": 48,
+  "title": "Balanced Binary Tree",
+  "slug": "balanced-binary-tree",
+  "url": "https://leetcode.com/problems/balanced-binary-tree/",
+  "difficulty": "Easy",
+  "acceptance_rate": 58,
+  "status": "solved",
+  "date_solved": "2026-03-25",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "tree"
+  ],
+  "patterns": [
+    "tree"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Maximum Depth of Binary Tree",
+      "slug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "K-th Largest Perfect Subtree Size in Binary Tree",
+      "slug": "k-th-largest-perfect-subtree-size-in-binary-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Check Balanced String",
+      "slug": "check-balanced-string",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
