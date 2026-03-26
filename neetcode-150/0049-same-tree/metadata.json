@@ -1,0 +1,25 @@
+{
+  "id": 49,
+  "title": "Same Tree",
+  "slug": "same-tree",
+  "url": "https://leetcode.com/problems/same-tree/",
+  "difficulty": "Easy",
+  "acceptance_rate": 66.8,
+  "status": "solved",
+  "date_solved": "2026-03-26",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
