@@ -1,0 +1,70 @@
+{
+  "id": 52,
+  "title": "Binary Tree Level Order Traversal",
+  "slug": "binary-tree-level-order-traversal",
+  "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+  "difficulty": "Medium",
+  "acceptance_rate": 72.4,
+  "status": "solved",
+  "date_solved": "2026-03-29",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Binary Tree Zigzag Level Order Traversal",
+      "slug": "binary-tree-zigzag-level-order-traversal",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Binary Tree Level Order Traversal II",
+      "slug": "binary-tree-level-order-traversal-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Depth of Binary Tree",
+      "slug": "minimum-depth-of-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Binary Tree Vertical Order Traversal",
+      "slug": "binary-tree-vertical-order-traversal",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Average of Levels in Binary Tree",
+      "slug": "average-of-levels-in-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "N-ary Tree Level Order Traversal",
+      "slug": "n-ary-tree-level-order-traversal",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Cousins in Binary Tree",
+      "slug": "cousins-in-binary-tree",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Number of Operations to Sort a Binary Tree by Level",
+      "slug": "minimum-number-of-operations-to-sort-a-binary-tree-by-level",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Divide Nodes Into the Maximum Number of Groups",
+      "slug": "divide-nodes-into-the-maximum-number-of-groups",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
