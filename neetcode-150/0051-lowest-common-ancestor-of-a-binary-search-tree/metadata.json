@@ -1,0 +1,51 @@
+{
+  "id": 51,
+  "title": "Lowest Common Ancestor of a Binary Search Tree",
+  "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+  "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+  "difficulty": "Medium",
+  "acceptance_rate": 70.3,
+  "status": "solved",
+  "date_solved": "2026-03-29",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "binary-search-tree",
+    "tree"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Lowest Common Ancestor of a Binary Tree",
+      "slug": "lowest-common-ancestor-of-a-binary-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Smallest Common Region",
+      "slug": "smallest-common-region",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Lowest Common Ancestor of a Binary Tree II",
+      "slug": "lowest-common-ancestor-of-a-binary-tree-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Lowest Common Ancestor of a Binary Tree III",
+      "slug": "lowest-common-ancestor-of-a-binary-tree-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Lowest Common Ancestor of a Binary Tree IV",
+      "slug": "lowest-common-ancestor-of-a-binary-tree-iv",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
