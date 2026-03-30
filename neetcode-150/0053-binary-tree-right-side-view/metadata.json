@@ -1,0 +1,38 @@
+{
+  "id": 53,
+  "title": "Binary Tree Right Side View",
+  "slug": "binary-tree-right-side-view",
+  "url": "https://leetcode.com/problems/binary-tree-right-side-view/",
+  "difficulty": "Medium",
+  "acceptance_rate": 69.8,
+  "status": "solved",
+  "date_solved": "2026-03-30",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [
+    "tree"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Populating Next Right Pointers in Each Node",
+      "slug": "populating-next-right-pointers-in-each-node",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Boundary of Binary Tree",
+      "slug": "boundary-of-binary-tree",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
