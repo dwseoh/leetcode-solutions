@@ -1,0 +1,27 @@
+{
+  "id": 54,
+  "title": "Count Good Nodes in Binary Tree",
+  "slug": "count-good-nodes-in-binary-tree",
+  "url": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+  "difficulty": "Medium",
+  "acceptance_rate": 73.8,
+  "status": "solved",
+  "date_solved": "2026-03-31",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "bfs",
+    "tree"
+  ],
+  "patterns": [
+    "tree"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
