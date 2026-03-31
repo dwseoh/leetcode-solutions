@@ -1,0 +1,36 @@
+{
+  "id": 55,
+  "title": "Validate Binary Search Tree",
+  "slug": "validate-binary-search-tree",
+  "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+  "difficulty": "Medium",
+  "acceptance_rate": 35.5,
+  "status": "solved",
+  "date_solved": "2026-03-31",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "dfs",
+    "binary-search-tree",
+    "tree"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Binary Tree Inorder Traversal",
+      "slug": "binary-tree-inorder-traversal",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find Mode in Binary Search Tree",
+      "slug": "find-mode-in-binary-search-tree",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
