@@ -1,0 +1,43 @@
+{
+  "id": 60,
+  "title": "Kth Largest Element in a Stream",
+  "slug": "kth-largest-element-in-a-stream",
+  "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+  "difficulty": "Easy",
+  "acceptance_rate": 60.8,
+  "status": "solved",
+  "date_solved": "2026-04-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log k)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "tree",
+    "design",
+    "binary-search-tree",
+    "heap",
+    "tree",
+    "data-stream"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Kth Largest Element in an Array",
+      "slug": "kth-largest-element-in-an-array",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Finding MK Average",
+      "slug": "finding-mk-average",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Sequentially Ordinal Rank Tracker",
+      "slug": "sequentially-ordinal-rank-tracker",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
