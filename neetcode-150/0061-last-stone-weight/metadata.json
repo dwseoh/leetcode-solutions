@@ -1,0 +1,25 @@
+{
+  "id": 61,
+  "title": "Last Stone Weight",
+  "slug": "last-stone-weight",
+  "url": "https://leetcode.com/problems/last-stone-weight/",
+  "difficulty": "Easy",
+  "acceptance_rate": 66.4,
+  "status": "solved",
+  "date_solved": "2026-04-04",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log k)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "heap"
+  ],
+  "patterns": [
+    "heap"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
