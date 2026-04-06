@@ -1,0 +1,38 @@
+{
+  "id": 228,
+  "title": "Summary Ranges",
+  "slug": "summary-ranges",
+  "url": "https://leetcode.com/problems/summary-ranges/",
+  "difficulty": "Easy",
+  "acceptance_rate": 54.1,
+  "status": "solved",
+  "date_solved": "2026-04-06",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Missing Ranges",
+      "slug": "missing-ranges",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Data Stream as Disjoint Intervals",
+      "slug": "data-stream-as-disjoint-intervals",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find Maximal Uncovered Ranges",
+      "slug": "find-maximal-uncovered-ranges",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
