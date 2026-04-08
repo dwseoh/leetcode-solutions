@@ -1,0 +1,53 @@
+{
+  "id": 6,
+  "title": "Palindrome Number",
+  "slug": "palindrome-number",
+  "url": "https://leetcode.com/problems/palindrome-number/",
+  "difficulty": "Easy",
+  "acceptance_rate": 60.4,
+  "status": "solved",
+  "date_solved": "2026-04-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "math"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Palindrome Linked List",
+      "slug": "palindrome-linked-list",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find Palindrome With Fixed Length",
+      "slug": "find-palindrome-with-fixed-length",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Strictly Palindromic Number",
+      "slug": "strictly-palindromic-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "  Count Symmetric Integers",
+      "slug": "count-symmetric-integers",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the Count of Good Integers",
+      "slug": "find-the-count-of-good-integers",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find the Largest Palindrome Divisible by K",
+      "slug": "find-the-largest-palindrome-divisible-by-k",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
