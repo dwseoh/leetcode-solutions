@@ -1,0 +1,23 @@
+{
+  "id": 3740,
+  "title": "Minimum Distance Between Three Equal Elements I",
+  "slug": "minimum-distance-between-three-equal-elements-i",
+  "url": "https://leetcode.com/problems/minimum-distance-between-three-equal-elements-i/",
+  "difficulty": "Easy",
+  "acceptance_rate": 70.8,
+  "status": "solved",
+  "date_solved": "2026-04-10",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
