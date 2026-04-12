@@ -1,0 +1,30 @@
+{
+  "id": 13,
+  "title": "Roman to Integer",
+  "slug": "roman-to-integer",
+  "url": "https://leetcode.com/problems/roman-to-integer/",
+  "difficulty": "Easy",
+  "acceptance_rate": 66.5,
+  "status": "solved",
+  "date_solved": "2026-04-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "hash-map",
+    "math",
+    "string"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Integer to Roman",
+      "slug": "integer-to-roman",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
