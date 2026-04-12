@@ -1,0 +1,49 @@
+{
+  "id": 66,
+  "title": "Plus One",
+  "slug": "plus-one",
+  "url": "https://leetcode.com/problems/plus-one/",
+  "difficulty": "Easy",
+  "acceptance_rate": 49.8,
+  "status": "solved",
+  "date_solved": "2026-04-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "math"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Multiply Strings",
+      "slug": "multiply-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add Binary",
+      "slug": "add-binary",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Plus One Linked List",
+      "slug": "plus-one-linked-list",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Add to Array-Form of Integer",
+      "slug": "add-to-array-form-of-integer",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Operations to Reduce an Integer to 0",
+      "slug": "minimum-operations-to-reduce-an-integer-to-0",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
