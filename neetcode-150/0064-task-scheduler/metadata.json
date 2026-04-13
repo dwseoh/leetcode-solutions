@@ -1,0 +1,58 @@
+{
+  "id": 64,
+  "title": "Task Scheduler",
+  "slug": "task-scheduler",
+  "url": "https://leetcode.com/problems/task-scheduler/",
+  "difficulty": "Medium",
+  "acceptance_rate": 62.9,
+  "status": "solved",
+  "date_solved": "2026-04-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log k)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "greedy",
+    "sorting",
+    "heap",
+    "counting"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Rearrange String k Distance Apart",
+      "slug": "rearrange-string-k-distance-apart",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Reorganize String",
+      "slug": "reorganize-string",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Number of Weeks for Which You Can Work",
+      "slug": "maximum-number-of-weeks-for-which-you-can-work",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Minimum Time to Finish All Jobs II",
+      "slug": "find-minimum-time-to-finish-all-jobs-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Task Scheduler II",
+      "slug": "task-scheduler-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Generate Schedule",
+      "slug": "generate-schedule",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
