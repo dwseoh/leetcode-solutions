@@ -1,0 +1,46 @@
+{
+  "id": 58,
+  "title": "Add Binary",
+  "slug": "add-binary",
+  "url": "https://leetcode.com/problems/add-binary/",
+  "difficulty": "Easy",
+  "acceptance_rate": 57.9,
+  "status": "solved",
+  "date_solved": "2026-04-14",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(1)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "math",
+    "string",
+    "bit-manipulation",
+    "simulation"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Add Two Numbers",
+      "slug": "add-two-numbers",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Multiply Strings",
+      "slug": "multiply-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Plus One",
+      "slug": "plus-one",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add to Array-Form of Integer",
+      "slug": "add-to-array-form-of-integer",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
