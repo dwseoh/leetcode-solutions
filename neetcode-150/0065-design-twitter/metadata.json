@@ -1,0 +1,31 @@
+{
+  "id": 65,
+  "title": "Design Twitter",
+  "slug": "design-twitter",
+  "url": "https://leetcode.com/problems/design-twitter/",
+  "difficulty": "Medium",
+  "acceptance_rate": 44.5,
+  "status": "solved",
+  "date_solved": "2026-04-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log k)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "hash-map",
+    "linked-list",
+    "design",
+    "heap"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Design a File Sharing System",
+      "slug": "design-a-file-sharing-system",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
