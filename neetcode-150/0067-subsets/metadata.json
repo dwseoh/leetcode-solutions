@@ -1,0 +1,52 @@
+{
+  "id": 67,
+  "title": "Subsets",
+  "slug": "subsets",
+  "url": "https://leetcode.com/problems/subsets/",
+  "difficulty": "Medium",
+  "acceptance_rate": 82.3,
+  "status": "solved",
+  "date_solved": "2026-05-16",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * (2^n))",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "backtracking",
+    "bit-manipulation"
+  ],
+  "patterns": [
+    "backtracking"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Subsets II",
+      "slug": "subsets-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Generalized Abbreviation",
+      "slug": "generalized-abbreviation",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Letter Case Permutation",
+      "slug": "letter-case-permutation",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Array Given Subset Sums",
+      "slug": "find-array-given-subset-sums",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Number of Maximum Bitwise-OR Subsets",
+      "slug": "count-number-of-maximum-bitwise-or-subsets",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
