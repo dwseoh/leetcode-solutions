@@ -1,0 +1,59 @@
+{
+  "id": 68,
+  "title": "Combination Sum",
+  "slug": "combination-sum",
+  "url": "https://leetcode.com/problems/combination-sum/",
+  "difficulty": "Medium",
+  "acceptance_rate": 76.5,
+  "status": "solved",
+  "date_solved": "2026-05-18",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(2^(t/m))",
+    "space": "O(t/m)"
+  },
+  "topics": [
+    "array",
+    "backtracking"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Letter Combinations of a Phone Number",
+      "slug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Combination Sum II",
+      "slug": "combination-sum-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Combinations",
+      "slug": "combinations",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Combination Sum III",
+      "slug": "combination-sum-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Factor Combinations",
+      "slug": "factor-combinations",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Combination Sum IV",
+      "slug": "combination-sum-iv",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "The Number of Ways to Make the Sum",
+      "slug": "the-number-of-ways-to-make-the-sum",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
