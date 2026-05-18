@@ -1,0 +1,29 @@
+{
+  "id": 69,
+  "title": "Combination Sum II",
+  "slug": "combination-sum-ii",
+  "url": "https://leetcode.com/problems/combination-sum-ii/",
+  "difficulty": "Medium",
+  "acceptance_rate": 59.4,
+  "status": "solved",
+  "date_solved": "2026-05-18",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * (2^n))",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "backtracking"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Combination Sum",
+      "slug": "combination-sum",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
