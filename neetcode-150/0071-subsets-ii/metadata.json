@@ -1,0 +1,37 @@
+{
+  "id": 71,
+  "title": "Subsets II",
+  "slug": "subsets-ii",
+  "url": "https://leetcode.com/problems/subsets-ii/",
+  "difficulty": "Medium",
+  "acceptance_rate": 61.3,
+  "status": "solved",
+  "date_solved": "2026-05-20",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "backtracking",
+    "bit-manipulation"
+  ],
+  "patterns": [
+    "backtracking"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Subsets",
+      "slug": "subsets",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Array Given Subset Sums",
+      "slug": "find-array-given-subset-sums",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
