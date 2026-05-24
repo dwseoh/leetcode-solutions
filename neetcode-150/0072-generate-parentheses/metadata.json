@@ -1,0 +1,42 @@
+{
+  "id": 72,
+  "title": "Generate Parentheses",
+  "slug": "generate-parentheses",
+  "url": "https://leetcode.com/problems/generate-parentheses/",
+  "difficulty": "Medium",
+  "acceptance_rate": 78.7,
+  "status": "solved",
+  "date_solved": "2026-05-24",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(2^n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming",
+    "backtracking"
+  ],
+  "patterns": [
+    "stack"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Letter Combinations of a Phone Number",
+      "slug": "letter-combinations-of-a-phone-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Valid Parentheses",
+      "slug": "valid-parentheses",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Check if a Parentheses String Can Be Valid",
+      "slug": "check-if-a-parentheses-string-can-be-valid",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
