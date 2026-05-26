@@ -1,0 +1,32 @@
+{
+  "id": 73,
+  "title": "Word Search",
+  "slug": "word-search",
+  "url": "https://leetcode.com/problems/word-search/",
+  "difficulty": "Medium",
+  "acceptance_rate": 47.4,
+  "status": "solved",
+  "date_solved": "2026-05-26",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(m * (4^n))",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "string",
+    "backtracking",
+    "dfs",
+    "matrix"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Word Search II",
+      "slug": "word-search-ii",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
