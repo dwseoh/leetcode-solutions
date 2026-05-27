@@ -1,0 +1,42 @@
+{
+  "id": 74,
+  "title": "Palindrome Partitioning",
+  "slug": "palindrome-partitioning",
+  "url": "https://leetcode.com/problems/palindrome-partitioning/",
+  "difficulty": "Medium",
+  "acceptance_rate": 74.1,
+  "status": "solved",
+  "date_solved": "2026-05-27",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * 2 ^ n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming",
+    "backtracking"
+  ],
+  "patterns": [
+    "backtracking"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Palindrome Partitioning II",
+      "slug": "palindrome-partitioning-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Palindrome Partitioning IV",
+      "slug": "palindrome-partitioning-iv",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Number of Non-overlapping Palindrome Substrings",
+      "slug": "maximum-number-of-non-overlapping-palindrome-substrings",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
