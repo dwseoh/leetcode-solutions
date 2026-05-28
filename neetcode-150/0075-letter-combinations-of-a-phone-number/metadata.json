@@ -1,0 +1,57 @@
+{
+  "id": 75,
+  "title": "Letter Combinations of a Phone Number",
+  "slug": "letter-combinations-of-a-phone-number",
+  "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+  "difficulty": "Medium",
+  "acceptance_rate": 66.1,
+  "status": "solved",
+  "date_solved": "2026-05-28",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * 4 ^ n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "hash-map",
+    "string",
+    "backtracking"
+  ],
+  "patterns": [
+    "backtracking"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Generate Parentheses",
+      "slug": "generate-parentheses",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Combination Sum",
+      "slug": "combination-sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Binary Watch",
+      "slug": "binary-watch",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Count Number of Texts",
+      "slug": "count-number-of-texts",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Number of Pushes to Type Word I",
+      "slug": "minimum-number-of-pushes-to-type-word-i",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Number of Pushes to Type Word II",
+      "slug": "minimum-number-of-pushes-to-type-word-ii",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
