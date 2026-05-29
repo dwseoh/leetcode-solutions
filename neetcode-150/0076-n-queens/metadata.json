@@ -1,0 +1,36 @@
+{
+  "id": 76,
+  "title": "N-Queens",
+  "slug": "n-queens",
+  "url": "https://leetcode.com/problems/n-queens/",
+  "difficulty": "Hard",
+  "acceptance_rate": 75.6,
+  "status": "solved",
+  "date_solved": "2026-05-29",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n!)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "backtracking"
+  ],
+  "patterns": [
+    "backtracking"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "N-Queens II",
+      "slug": "n-queens-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Grid Illumination",
+      "slug": "grid-illumination",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
