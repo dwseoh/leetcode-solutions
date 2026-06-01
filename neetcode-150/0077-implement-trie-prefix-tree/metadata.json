@@ -1,0 +1,66 @@
+{
+  "id": 77,
+  "title": "Implement Trie (Prefix Tree)",
+  "slug": "implement-trie-prefix-tree",
+  "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+  "difficulty": "Medium",
+  "acceptance_rate": 69.6,
+  "status": "solved",
+  "date_solved": "2026-06-01",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "hash-map",
+    "string",
+    "design",
+    "trie"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Design Add and Search Words Data Structure",
+      "slug": "design-add-and-search-words-data-structure",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Design Search Autocomplete System",
+      "slug": "design-search-autocomplete-system",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Replace Words",
+      "slug": "replace-words",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Implement Magic Dictionary",
+      "slug": "implement-magic-dictionary",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Encrypt and Decrypt Strings",
+      "slug": "encrypt-and-decrypt-strings",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Implement Trie II (Prefix Tree)",
+      "slug": "implement-trie-ii-prefix-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Prefix and Suffix Pairs II",
+      "slug": "count-prefix-and-suffix-pairs-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Prefix and Suffix Pairs I",
+      "slug": "count-prefix-and-suffix-pairs-i",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
