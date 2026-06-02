@@ -1,0 +1,56 @@
+{
+  "id": 78,
+  "title": "Design Add and Search Words Data Structure",
+  "slug": "design-add-and-search-words-data-structure",
+  "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+  "difficulty": "Medium",
+  "acceptance_rate": 48.5,
+  "status": "solved",
+  "date_solved": "2026-06-02",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(t + n)"
+  },
+  "topics": [
+    "string",
+    "dfs",
+    "design",
+    "trie"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Implement Trie (Prefix Tree)",
+      "slug": "implement-trie-prefix-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Prefix and Suffix Search",
+      "slug": "prefix-and-suffix-search",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Match Substring After Replacement",
+      "slug": "match-substring-after-replacement",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Sum of Prefix Scores of Strings",
+      "slug": "sum-of-prefix-scores-of-strings",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Prefix and Suffix Pairs II",
+      "slug": "count-prefix-and-suffix-pairs-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Prefix and Suffix Pairs I",
+      "slug": "count-prefix-and-suffix-pairs-i",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
