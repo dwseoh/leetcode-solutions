@@ -1,0 +1,59 @@
+{
+  "id": 81,
+  "title": "Max Area of Island",
+  "slug": "max-area-of-island",
+  "url": "https://leetcode.com/problems/max-area-of-island/",
+  "difficulty": "Medium",
+  "acceptance_rate": 74,
+  "status": "solved",
+  "date_solved": "2026-06-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "dfs",
+    "bfs",
+    "union-find",
+    "matrix"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Islands",
+      "slug": "number-of-islands",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Battleships in a Board",
+      "slug": "battleships-in-a-board",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Island Perimeter",
+      "slug": "island-perimeter",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Largest Submatrix With Rearrangements",
+      "slug": "largest-submatrix-with-rearrangements",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Detonate the Maximum Bombs",
+      "slug": "detonate-the-maximum-bombs",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Number of Fish in a Grid",
+      "slug": "maximum-number-of-fish-in-a-grid",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
