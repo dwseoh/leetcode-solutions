@@ -1,0 +1,43 @@
+{
+  "id": 82,
+  "title": "Clone Graph",
+  "slug": "clone-graph",
+  "url": "https://leetcode.com/problems/clone-graph/",
+  "difficulty": "Medium",
+  "acceptance_rate": 65.4,
+  "status": "solved",
+  "date_solved": "2026-06-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "hash-map",
+    "dfs",
+    "bfs",
+    "graph"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Copy List with Random Pointer",
+      "slug": "copy-list-with-random-pointer",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Clone Binary Tree With Random Pointer",
+      "slug": "clone-binary-tree-with-random-pointer",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Clone N-ary Tree",
+      "slug": "clone-n-ary-tree",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
