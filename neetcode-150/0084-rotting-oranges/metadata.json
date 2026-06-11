@@ -1,0 +1,47 @@
+{
+  "id": 84,
+  "title": "Rotting Oranges",
+  "slug": "rotting-oranges",
+  "url": "https://leetcode.com/problems/rotting-oranges/",
+  "difficulty": "Medium",
+  "acceptance_rate": 58.8,
+  "status": "solved",
+  "date_solved": "2026-06-11",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "bfs",
+    "matrix"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Walls and Gates",
+      "slug": "walls-and-gates",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Battleships in a Board",
+      "slug": "battleships-in-a-board",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Detonate the Maximum Bombs",
+      "slug": "detonate-the-maximum-bombs",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Escape the Spreading Fire",
+      "slug": "escape-the-spreading-fire",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
