@@ -1,0 +1,27 @@
+{
+  "id": 85,
+  "title": "Pacific Atlantic Water Flow",
+  "slug": "pacific-atlantic-water-flow",
+  "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+  "difficulty": "Medium",
+  "acceptance_rate": 61,
+  "status": "solved",
+  "date_solved": "2026-06-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "dfs",
+    "bfs",
+    "matrix"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
