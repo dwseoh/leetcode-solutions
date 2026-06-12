@@ -1,0 +1,75 @@
+{
+  "id": 70,
+  "title": "Climbing Stairs",
+  "slug": "climbing-stairs",
+  "url": "https://leetcode.com/problems/climbing-stairs/",
+  "difficulty": "Easy",
+  "acceptance_rate": 54.1,
+  "status": "solved",
+  "date_solved": "2026-06-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "math",
+    "dynamic-programming",
+    "memoization"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Min Cost Climbing Stairs",
+      "slug": "min-cost-climbing-stairs",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Fibonacci Number",
+      "slug": "fibonacci-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "N-th Tribonacci Number",
+      "slug": "n-th-tribonacci-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Rounds to Complete All Tasks",
+      "slug": "minimum-rounds-to-complete-all-tasks",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Number of Ways to Place Houses",
+      "slug": "count-number-of-ways-to-place-houses",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of Ways to Reach a Position After Exactly k Steps",
+      "slug": "number-of-ways-to-reach-a-position-after-exactly-k-steps",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Ways To Build Good Strings",
+      "slug": "count-ways-to-build-good-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Frog Jump II",
+      "slug": "frog-jump-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find Number of Ways to Reach the K-th Stair",
+      "slug": "find-number-of-ways-to-reach-the-k-th-stair",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "The Number of Ways to Make the Sum",
+      "slug": "the-number-of-ways-to-make-the-sum",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
