@@ -1,0 +1,39 @@
+{
+  "id": 86,
+  "title": "Surrounded Regions",
+  "slug": "surrounded-regions",
+  "url": "https://leetcode.com/problems/surrounded-regions/",
+  "difficulty": "Medium",
+  "acceptance_rate": 45.5,
+  "status": "solved",
+  "date_solved": "2026-06-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "dfs",
+    "bfs",
+    "union-find",
+    "matrix"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Islands",
+      "slug": "number-of-islands",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Walls and Gates",
+      "slug": "walls-and-gates",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
