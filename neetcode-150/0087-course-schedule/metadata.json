@@ -1,0 +1,53 @@
+{
+  "id": 87,
+  "title": "Course Schedule",
+  "slug": "course-schedule",
+  "url": "https://leetcode.com/problems/course-schedule/",
+  "difficulty": "Medium",
+  "acceptance_rate": 51.6,
+  "status": "solved",
+  "date_solved": "2026-06-14",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "topics": [
+    "dfs",
+    "bfs",
+    "graph",
+    "topological-sort"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Course Schedule II",
+      "slug": "course-schedule-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Graph Valid Tree",
+      "slug": "graph-valid-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Height Trees",
+      "slug": "minimum-height-trees",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Course Schedule III",
+      "slug": "course-schedule-iii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Build a Matrix With Conditions",
+      "slug": "build-a-matrix-with-conditions",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
