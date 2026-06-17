@@ -1,0 +1,43 @@
+{
+  "id": 89,
+  "title": "Graph Valid Tree",
+  "slug": "graph-valid-tree",
+  "url": "https://leetcode.com/problems/graph-valid-tree/",
+  "difficulty": "Medium",
+  "acceptance_rate": 50,
+  "status": "solved",
+  "date_solved": "2026-06-17",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "topics": [
+    "dfs",
+    "bfs",
+    "union-find",
+    "graph"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Course Schedule",
+      "slug": "course-schedule",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of Connected Components in an Undirected Graph",
+      "slug": "number-of-connected-components-in-an-undirected-graph",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Keys and Rooms",
+      "slug": "keys-and-rooms",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
