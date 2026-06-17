@@ -1,0 +1,51 @@
+{
+  "id": 90,
+  "title": "Number of Connected Components in an Undirected Graph",
+  "slug": "number-of-connected-components-in-an-undirected-graph",
+  "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+  "difficulty": "Medium",
+  "acceptance_rate": 65,
+  "status": "solved",
+  "date_solved": "2026-06-17",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(V + E)",
+    "space": "O(V + E)"
+  },
+  "topics": [
+    "dfs",
+    "bfs",
+    "union-find",
+    "graph"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Islands",
+      "slug": "number-of-islands",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Graph Valid Tree",
+      "slug": "graph-valid-tree",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of Provinces",
+      "slug": "number-of-provinces",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Paths in Maze That Lead to Same Room",
+      "slug": "paths-in-maze-that-lead-to-same-room",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count the Number of Complete Components",
+      "slug": "count-the-number-of-complete-components",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
