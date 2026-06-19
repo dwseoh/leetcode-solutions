@@ -1,0 +1,48 @@
+{
+  "id": 91,
+  "title": "Redundant Connection",
+  "slug": "redundant-connection",
+  "url": "https://leetcode.com/problems/redundant-connection/",
+  "difficulty": "Medium",
+  "acceptance_rate": 67.8,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "dfs",
+    "bfs",
+    "union-find",
+    "graph"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Redundant Connection II",
+      "slug": "redundant-connection-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Accounts Merge",
+      "slug": "accounts-merge",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Employees to Be Invited to a Meeting",
+      "slug": "maximum-employees-to-be-invited-to-a-meeting",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Shortest Cycle in a Graph",
+      "slug": "shortest-cycle-in-a-graph",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
