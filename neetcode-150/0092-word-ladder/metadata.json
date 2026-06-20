@@ -1,0 +1,42 @@
+{
+  "id": 92,
+  "title": "Word Ladder",
+  "slug": "word-ladder",
+  "url": "https://leetcode.com/problems/word-ladder/",
+  "difficulty": "Hard",
+  "acceptance_rate": 45.8,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "hash-map",
+    "string",
+    "bfs"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Word Ladder II",
+      "slug": "word-ladder-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Genetic Mutation",
+      "slug": "minimum-genetic-mutation",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Words Within Two Edits of Dictionary",
+      "slug": "words-within-two-edits-of-dictionary",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
