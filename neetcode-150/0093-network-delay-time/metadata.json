@@ -1,0 +1,39 @@
+{
+  "id": 93,
+  "title": "Network Delay Time",
+  "slug": "network-delay-time",
+  "url": "https://leetcode.com/problems/network-delay-time/",
+  "difficulty": "Medium",
+  "acceptance_rate": 60.7,
+  "status": "solved",
+  "date_solved": "2026-06-22",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(ElogV)",
+    "space": "O(V + E)"
+  },
+  "topics": [
+    "dfs",
+    "bfs",
+    "graph",
+    "heap",
+    "shortest-path"
+  ],
+  "patterns": [
+    "graph"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "The Time When the Network Becomes Idle",
+      "slug": "the-time-when-the-network-becomes-idle",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Second Minimum Time to Reach Destination",
+      "slug": "second-minimum-time-to-reach-destination",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
