@@ -1,0 +1,56 @@
+{
+  "id": 144,
+  "title": "Single Number",
+  "slug": "single-number",
+  "url": "https://leetcode.com/problems/single-number/",
+  "difficulty": "Easy",
+  "acceptance_rate": 77.8,
+  "status": "solved",
+  "date_solved": "2026-06-23",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "bit-manipulation"
+  ],
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Single Number II",
+      "slug": "single-number-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Single Number III",
+      "slug": "single-number-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Missing Number",
+      "slug": "missing-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the Duplicate Number",
+      "slug": "find-the-duplicate-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find the Difference",
+      "slug": "find-the-difference",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the XOR of Numbers Which Appear Twice",
+      "slug": "find-the-xor-of-numbers-which-appear-twice",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
