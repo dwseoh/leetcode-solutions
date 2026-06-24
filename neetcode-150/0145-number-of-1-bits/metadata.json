@@ -1,0 +1,64 @@
+{
+  "id": 145,
+  "title": "Number of 1 Bits",
+  "slug": "number-of-1-bits",
+  "url": "https://leetcode.com/problems/number-of-1-bits/",
+  "difficulty": "Easy",
+  "acceptance_rate": 77,
+  "status": "solved",
+  "date_solved": "2026-06-24",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(1)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "divide-and-conquer",
+    "bit-manipulation"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Reverse Bits",
+      "slug": "reverse-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Power of Two",
+      "slug": "power-of-two",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Counting Bits",
+      "slug": "counting-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Binary Watch",
+      "slug": "binary-watch",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Hamming Distance",
+      "slug": "hamming-distance",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Binary Number with Alternating Bits",
+      "slug": "binary-number-with-alternating-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Prime Number of Set Bits in Binary Representation",
+      "slug": "prime-number-of-set-bits-in-binary-representation",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Convert Date to Binary",
+      "slug": "convert-date-to-binary",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
