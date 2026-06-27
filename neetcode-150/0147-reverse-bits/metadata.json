@@ -1,0 +1,41 @@
+{
+  "id": 147,
+  "title": "Reverse Bits",
+  "slug": "reverse-bits",
+  "url": "https://leetcode.com/problems/reverse-bits/",
+  "difficulty": "Easy",
+  "acceptance_rate": 68.7,
+  "status": "solved",
+  "date_solved": "2026-06-27",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(1)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "divide-and-conquer",
+    "bit-manipulation"
+  ],
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Reverse Integer",
+      "slug": "reverse-integer",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of 1 Bits",
+      "slug": "number-of-1-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "A Number After a Double Reversal",
+      "slug": "a-number-after-a-double-reversal",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
