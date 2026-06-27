@@ -1,0 +1,41 @@
+{
+  "id": 146,
+  "title": "Counting Bits",
+  "slug": "counting-bits",
+  "url": "https://leetcode.com/problems/counting-bits/",
+  "difficulty": "Easy",
+  "acceptance_rate": 80.7,
+  "status": "solved",
+  "date_solved": "2026-06-27",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "dynamic-programming",
+    "bit-manipulation"
+  ],
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of 1 Bits",
+      "slug": "number-of-1-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Sum of Values at Indices With K Set Bits",
+      "slug": "sum-of-values-at-indices-with-k-set-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the K-or of an Array",
+      "slug": "find-the-k-or-of-an-array",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
