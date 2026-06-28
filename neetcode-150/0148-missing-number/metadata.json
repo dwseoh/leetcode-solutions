@@ -1,0 +1,60 @@
+{
+  "id": 148,
+  "title": "Missing Number",
+  "slug": "missing-number",
+  "url": "https://leetcode.com/problems/missing-number/",
+  "difficulty": "Easy",
+  "acceptance_rate": 72.2,
+  "status": "solved",
+  "date_solved": "2026-06-28",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "math",
+    "binary-search",
+    "bit-manipulation",
+    "sorting"
+  ],
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "First Missing Positive",
+      "slug": "first-missing-positive",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Single Number",
+      "slug": "single-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find the Duplicate Number",
+      "slug": "find-the-duplicate-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Couples Holding Hands",
+      "slug": "couples-holding-hands",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find Unique Binary String",
+      "slug": "find-unique-binary-string",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Find the Largest Almost Missing Integer",
+      "slug": "find-the-largest-almost-missing-integer",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
