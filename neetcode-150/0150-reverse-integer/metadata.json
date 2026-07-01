@@ -1,0 +1,45 @@
+{
+  "id": 150,
+  "title": "Reverse Integer",
+  "slug": "reverse-integer",
+  "url": "https://leetcode.com/problems/reverse-integer/",
+  "difficulty": "Medium",
+  "acceptance_rate": 32.1,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "math"
+  ],
+  "patterns": [
+    "bit-manipulation"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "String to Integer (atoi)",
+      "slug": "string-to-integer-atoi",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Reverse Bits",
+      "slug": "reverse-bits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "A Number After a Double Reversal",
+      "slug": "a-number-after-a-double-reversal",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Count Number of Distinct Integers After Reverse Operations",
+      "slug": "count-number-of-distinct-integers-after-reverse-operations",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
