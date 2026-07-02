@@ -1,0 +1,36 @@
+{
+  "id": 100,
+  "title": "Min Cost Climbing Stairs",
+  "slug": "min-cost-climbing-stairs",
+  "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+  "difficulty": "Easy",
+  "acceptance_rate": 68.4,
+  "status": "solved",
+  "date_solved": "2026-07-02",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Climbing Stairs",
+      "slug": "climbing-stairs",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Find Number of Ways to Reach the K-th Stair",
+      "slug": "find-number-of-ways-to-reach-the-k-th-stair",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
