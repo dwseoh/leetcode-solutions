@@ -1,0 +1,38 @@
+{
+  "id": 102,
+  "title": "House Robber III",
+  "slug": "house-robber-iii",
+  "url": "https://leetcode.com/problems/house-robber-iii/",
+  "difficulty": "Medium",
+  "acceptance_rate": 56.1,
+  "status": "solved",
+  "date_solved": "2026-07-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "dynamic-programming",
+    "tree",
+    "dfs",
+    "tree"
+  ],
+  "patterns": [
+    "tree"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "House Robber",
+      "slug": "house-robber",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber II",
+      "slug": "house-robber-ii",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
