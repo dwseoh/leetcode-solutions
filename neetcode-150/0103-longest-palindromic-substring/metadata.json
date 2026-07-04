@@ -1,0 +1,57 @@
+{
+  "id": 103,
+  "title": "Longest Palindromic Substring",
+  "slug": "longest-palindromic-substring",
+  "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+  "difficulty": "Medium",
+  "acceptance_rate": 38.1,
+  "status": "solved",
+  "date_solved": "2026-07-04",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "two-pointers",
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Shortest Palindrome",
+      "slug": "shortest-palindrome",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Palindrome Permutation",
+      "slug": "palindrome-permutation",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Palindrome Pairs",
+      "slug": "palindrome-pairs",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Longest Palindromic Subsequence",
+      "slug": "longest-palindromic-subsequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Palindromic Substrings",
+      "slug": "palindromic-substrings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Number of Non-overlapping Palindrome Substrings",
+      "slug": "maximum-number-of-non-overlapping-palindrome-substrings",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
