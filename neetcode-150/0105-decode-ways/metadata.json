@@ -5,12 +5,12 @@
   "url": "https://leetcode.com/problems/decode-ways/",
   "difficulty": "Medium",
   "acceptance_rate": 38.2,
-  "status": "unsolved",
-  "date_solved": "YYYY-MM-DD",
-  "attempts": 0,
+  "status": "solved",
+  "date_solved": "2026-07-07",
+  "attempts": 1,
   "complexity": {
-    "time": "O()",
-    "space": "O()"
+    "time": "O(n)",
+    "space": "O(n)"
   },
   "topics": [
     "string",
