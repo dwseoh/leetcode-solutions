@@ -1,0 +1,41 @@
+{
+  "id": 105,
+  "title": "Decode Ways",
+  "slug": "decode-ways",
+  "url": "https://leetcode.com/problems/decode-ways/",
+  "difficulty": "Medium",
+  "acceptance_rate": 38.2,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Decode Ways II",
+      "slug": "decode-ways-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Number of Ways to Separate Numbers",
+      "slug": "number-of-ways-to-separate-numbers",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Number of Texts",
+      "slug": "count-number-of-texts",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
