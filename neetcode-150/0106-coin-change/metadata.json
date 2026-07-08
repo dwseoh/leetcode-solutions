@@ -1,0 +1,72 @@
+{
+  "id": 106,
+  "title": "Coin Change",
+  "slug": "coin-change",
+  "url": "https://leetcode.com/problems/coin-change/",
+  "difficulty": "Medium",
+  "acceptance_rate": 48.7,
+  "status": "solved",
+  "date_solved": "2026-07-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * t)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "bfs"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimum Cost For Tickets",
+      "slug": "minimum-cost-for-tickets",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Value of K Coins From Piles",
+      "slug": "maximum-value-of-k-coins-from-piles",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Number of Operations to Convert Time",
+      "slug": "minimum-number-of-operations-to-convert-time",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Cost to Split an Array",
+      "slug": "minimum-cost-to-split-an-array",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count of Sub-Multisets With Bounded Sum",
+      "slug": "count-of-sub-multisets-with-bounded-sum",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Length of the Longest Subsequence That Sums to Target",
+      "slug": "length-of-the-longest-subsequence-that-sums-to-target",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Number of Coins to be Added",
+      "slug": "minimum-number-of-coins-to-be-added",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Most Expensive Item That Can Not Be Bought",
+      "slug": "most-expensive-item-that-can-not-be-bought",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Inverse Coin Change",
+      "slug": "inverse-coin-change",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
