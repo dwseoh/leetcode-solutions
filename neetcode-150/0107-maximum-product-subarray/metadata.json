@@ -1,0 +1,51 @@
+{
+  "id": 107,
+  "title": "Maximum Product Subarray",
+  "slug": "maximum-product-subarray",
+  "url": "https://leetcode.com/problems/maximum-product-subarray/",
+  "difficulty": "Medium",
+  "acceptance_rate": 36.6,
+  "status": "solved",
+  "date_solved": "2026-07-09",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Maximum Subarray",
+      "slug": "maximum-subarray",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "House Robber",
+      "slug": "house-robber",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Product of Array Except Self",
+      "slug": "product-of-array-except-self",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Product of Three Numbers",
+      "slug": "maximum-product-of-three-numbers",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Subarray Product Less Than K",
+      "slug": "subarray-product-less-than-k",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
