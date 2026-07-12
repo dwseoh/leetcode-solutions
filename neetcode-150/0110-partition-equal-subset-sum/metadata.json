@@ -1,0 +1,61 @@
+{
+  "id": 110,
+  "title": "Partition Equal Subset Sum",
+  "slug": "partition-equal-subset-sum",
+  "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+  "difficulty": "Medium",
+  "acceptance_rate": 49.7,
+  "status": "solved",
+  "date_solved": "2026-07-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * t)",
+    "space": "O(n * t)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Partition to K Equal Sum Subsets",
+      "slug": "partition-to-k-equal-sum-subsets",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimize the Difference Between Target and Chosen Elements",
+      "slug": "minimize-the-difference-between-target-and-chosen-elements",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Number of Ways to Partition an Array",
+      "slug": "maximum-number-of-ways-to-partition-an-array",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Partition Array Into Two Arrays to Minimize Sum Difference",
+      "slug": "partition-array-into-two-arrays-to-minimize-sum-difference",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Find Subarrays With Equal Sum",
+      "slug": "find-subarrays-with-equal-sum",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Number of Great Partitions",
+      "slug": "number-of-great-partitions",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Split With Minimum Sum",
+      "slug": "split-with-minimum-sum",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
