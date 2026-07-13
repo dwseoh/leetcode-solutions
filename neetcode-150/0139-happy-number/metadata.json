@@ -1,0 +1,60 @@
+{
+  "id": 139,
+  "title": "Happy Number",
+  "slug": "happy-number",
+  "url": "https://leetcode.com/problems/happy-number/",
+  "difficulty": "Easy",
+  "acceptance_rate": 59.9,
+  "status": "solved",
+  "date_solved": "2026-07-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(log n)",
+    "space": "O(log n)"
+  },
+  "topics": [
+    "hash-map",
+    "math",
+    "two-pointers"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Linked List Cycle",
+      "slug": "linked-list-cycle",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Digits",
+      "slug": "add-digits",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Ugly Number",
+      "slug": "ugly-number",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Sum of Digits of String After Convert",
+      "slug": "sum-of-digits-of-string-after-convert",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Minimum Addition to Make Integer Beautiful",
+      "slug": "minimum-addition-to-make-integer-beautiful",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Smallest Value After Replacing With Sum of Prime Factors",
+      "slug": "smallest-value-after-replacing-with-sum-of-prime-factors",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count the Digits That Divide a Number",
+      "slug": "count-the-digits-that-divide-a-number",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
