@@ -1,0 +1,41 @@
+{
+  "id": 141,
+  "title": "Pow(x, n)",
+  "slug": "powx-n",
+  "url": "https://leetcode.com/problems/powx-n/",
+  "difficulty": "Medium",
+  "acceptance_rate": 39,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "math",
+    "recursion"
+  ],
+  "patterns": [
+    "math"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Sqrt(x)",
+      "slug": "sqrtx",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Super Pow",
+      "slug": "super-pow",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Count Collisions of Monkeys on a Polygon",
+      "slug": "count-collisions-of-monkeys-on-a-polygon",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
