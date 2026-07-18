@@ -1,0 +1,52 @@
+{
+  "id": 142,
+  "title": "Multiply Strings",
+  "slug": "multiply-strings",
+  "url": "https://leetcode.com/problems/multiply-strings/",
+  "difficulty": "Medium",
+  "acceptance_rate": 44.5,
+  "status": "solved",
+  "date_solved": "2026-07-18",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(m * n)",
+    "space": "O(m + n)"
+  },
+  "topics": [
+    "math",
+    "string",
+    "simulation"
+  ],
+  "patterns": [
+    "math"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Add Two Numbers",
+      "slug": "add-two-numbers",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Plus One",
+      "slug": "plus-one",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Binary",
+      "slug": "add-binary",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Strings",
+      "slug": "add-strings",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Apply Discount to Prices",
+      "slug": "apply-discount-to-prices",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
