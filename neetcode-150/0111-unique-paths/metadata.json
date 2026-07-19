@@ -1,0 +1,60 @@
+{
+  "id": 111,
+  "title": "Unique Paths",
+  "slug": "unique-paths",
+  "url": "https://leetcode.com/problems/unique-paths/",
+  "difficulty": "Medium",
+  "acceptance_rate": 67.1,
+  "status": "solved",
+  "date_solved": "2026-07-19",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "math",
+    "dynamic-programming",
+    "combinatorics"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Unique Paths II",
+      "slug": "unique-paths-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Path Sum",
+      "slug": "minimum-path-sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Dungeon Game",
+      "slug": "dungeon-game",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Path Cost in a Grid",
+      "slug": "minimum-path-cost-in-a-grid",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Cost Homecoming of a Robot in a Grid",
+      "slug": "minimum-cost-homecoming-of-a-robot-in-a-grid",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Number of Ways to Reach a Position After Exactly k Steps",
+      "slug": "number-of-ways-to-reach-a-position-after-exactly-k-steps",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Paths in Matrix Whose Sum Is Divisible by K",
+      "slug": "paths-in-matrix-whose-sum-is-divisible-by-k",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
