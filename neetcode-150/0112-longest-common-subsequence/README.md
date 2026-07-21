@@ -4,8 +4,8 @@
 **Acceptance Rate:** `59.4%`  
 **Topics:** `string` `dynamic-programming`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-07-21  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/longest-common-subsequence/)
 
@@ -59,19 +59,35 @@ Explanation: There is no such common subsequence, so the result is 0.
 2. 
 3. 
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+**Time Complexity:** `O(1)`  
+**Space Complexity:** `O(n * m)`
 
 ---
 
 ## Solution
 
 ```cpp
-// C++ solution
+class Solution {
+public:
+    int longestCommonSubsequence(string text1, string text2) {
 
+        vector<vector<int>> memo(text1.size(),vector<int> (text2.size(),-1));
 
+        function<int(int,int)> recurse = [&](int i, int j) -> int {
+            if (i >= text1.size() || j >= text2.size()) return 0;
+            if (memo[i][j] != -1) return memo[i][j];
+
+            if (text1[i] == text2[j]) {
+                return memo[i][j]=1+recurse(i+1,j+1);
+            } 
+            
+            return memo[i][j]=max(recurse(i+1,j),recurse(i,j+1));
+        };
+
+        return recurse(0,0);
+    }
+};
 ```
-
 ---
 
 ## Alternative Approaches
