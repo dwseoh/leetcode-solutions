@@ -1,0 +1,51 @@
+{
+  "id": 112,
+  "title": "Longest Common Subsequence",
+  "slug": "longest-common-subsequence",
+  "url": "https://leetcode.com/problems/longest-common-subsequence/",
+  "difficulty": "Medium",
+  "acceptance_rate": 59.4,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Longest Palindromic Subsequence",
+      "slug": "longest-palindromic-subsequence",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Delete Operation for Two Strings",
+      "slug": "delete-operation-for-two-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Shortest Common Supersequence ",
+      "slug": "shortest-common-supersequence",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximize Number of Subsequences in a String",
+      "slug": "maximize-number-of-subsequences-in-a-string",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Subsequence With the Minimum Score",
+      "slug": "subsequence-with-the-minimum-score",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
