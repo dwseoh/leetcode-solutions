@@ -1,0 +1,34 @@
+{
+  "id": 113,
+  "title": "Best Time to Buy and Sell Stock with Cooldown",
+  "slug": "best-time-to-buy-and-sell-stock-with-cooldown",
+  "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+  "difficulty": "Medium",
+  "acceptance_rate": 62.4,
+  "status": "solved",
+  "date_solved": "2026-07-23",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(1)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Best Time to Buy and Sell Stock",
+      "slug": "best-time-to-buy-and-sell-stock",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Best Time to Buy and Sell Stock II",
+      "slug": "best-time-to-buy-and-sell-stock-ii",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
