@@ -1,0 +1,56 @@
+{
+  "id": 114,
+  "title": "Coin Change II",
+  "slug": "coin-change-ii",
+  "url": "https://leetcode.com/problems/coin-change-ii/",
+  "difficulty": "Medium",
+  "acceptance_rate": 59.5,
+  "status": "solved",
+  "date_solved": "2026-07-24",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * a)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Maximum Value of K Coins From Piles",
+      "slug": "maximum-value-of-k-coins-from-piles",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Number of Ways to Earn Points",
+      "slug": "number-of-ways-to-earn-points",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count of Sub-Multisets With Bounded Sum",
+      "slug": "count-of-sub-multisets-with-bounded-sum",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Length of the Longest Subsequence That Sums to Target",
+      "slug": "length-of-the-longest-subsequence-that-sums-to-target",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "The Number of Ways to Make the Sum",
+      "slug": "the-number-of-ways-to-make-the-sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Inverse Coin Change",
+      "slug": "inverse-coin-change",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
