@@ -1,0 +1,40 @@
+{
+  "id": 2039,
+  "title": "The Time When the Network Becomes Idle",
+  "slug": "the-time-when-the-network-becomes-idle",
+  "url": "https://leetcode.com/problems/the-time-when-the-network-becomes-idle/",
+  "difficulty": "Medium",
+  "acceptance_rate": 55.9,
+  "status": "solved",
+  "date_solved": "2026-07-26",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n + E)",
+    "space": "O(n + E)"
+  },
+  "topics": [
+    "array",
+    "bfs",
+    "graph"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Network Delay Time",
+      "slug": "network-delay-time",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "N-ary Tree Level Order Traversal",
+      "slug": "n-ary-tree-level-order-traversal",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Depth of N-ary Tree",
+      "slug": "maximum-depth-of-n-ary-tree",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
