@@ -1,0 +1,37 @@
+{
+  "id": 115,
+  "title": "Target Sum",
+  "slug": "target-sum",
+  "url": "https://leetcode.com/problems/target-sum/",
+  "difficulty": "Medium",
+  "acceptance_rate": 52.6,
+  "status": "solved",
+  "date_solved": "2026-07-26",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * a)",
+    "space": "O(n * a)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "backtracking"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Expression Add Operators",
+      "slug": "expression-add-operators",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Ways to Express an Integer as Sum of Powers",
+      "slug": "ways-to-express-an-integer-as-sum-of-powers",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
