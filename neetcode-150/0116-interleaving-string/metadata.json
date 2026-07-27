@@ -1,0 +1,25 @@
+{
+  "id": 116,
+  "title": "Interleaving String",
+  "slug": "interleaving-string",
+  "url": "https://leetcode.com/problems/interleaving-string/",
+  "difficulty": "Medium",
+  "acceptance_rate": 44.4,
+  "status": "solved",
+  "date_solved": "2026-07-27",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
