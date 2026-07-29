@@ -1,0 +1,35 @@
+{
+  "id": 117,
+  "title": "Longest Increasing Path in a Matrix",
+  "slug": "longest-increasing-path-in-a-matrix",
+  "url": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+  "difficulty": "Hard",
+  "acceptance_rate": 56.9,
+  "status": "solved",
+  "date_solved": "2026-07-29",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "dfs",
+    "bfs",
+    "graph",
+    "topological-sort",
+    "memoization",
+    "matrix"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Increasing Paths in a Grid",
+      "slug": "number-of-increasing-paths-in-a-grid",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
