@@ -4,8 +4,8 @@
 **Acceptance Rate:** `74.3%`  
 **Topics:** `array` `matrix` `simulation`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-07-29  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/shift-2d-grid/)
 
@@ -62,19 +62,37 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 2. 
 3. 
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(n * m)`
 
 ---
 
 ## Solution
 
 ```cpp
-// C++ solution
+class Solution {
+public:
+    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+        int r = grid.size(); int c = grid[0].size();
+        int n = r*c;
+        k = k % n;
+        if (!k) return grid;
+        
+        auto shift = [&](int i, int j) {
+            while (i<j) {
+                swap(grid[i/c][i%c],grid[j/c][j%c]);
+                i++;j--;
+            }
+        };
 
+        shift(0,n-1);
+        shift(0,k-1);
+        shift(k,n-1);
 
+        return grid;
+    }
+};
 ```
-
 ---
 
 ## Alternative Approaches

@@ -1,8 +1,14 @@
 {
-  "neetcode": {
-    "directory": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/neetcode-150"
-  },
-  "leetcode": {
-    "directory": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/leetcode"
+  "repos": {
+    "neetcode": {
+      "label": "NeetCode 150",
+      "directory": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/neetcode-150",
+      "total": 150
+    },
+    "leetcode": {
+      "label": "LeetCode",
+      "directory": "/Users/jamieseoh/Documents/Repositories/leetcode-solutions/leetcode",
+      "total": null
+    }
   }
 }

@@ -8,32 +8,67 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { scrapeLeetCode, scrapeNeetCode, lookupNeetCodeSlug } from './scraper.js';
 import { generateDirectory, getNextId, directoryExists } from './generator.js';
+import {
+  loadConfig,
+  saveConfig,
+  listRepos,
+  getRepo,
+  resolveRepoKey,
+  loadProblems,
+  parseRef,
+  padId,
+  makeUid,
+  isFinished,
+  computeAllProgress,
+  renderProgressBar,
+} from './repos.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const CONFIG_PATH = path.join(__dirname, 'config.json');
 
 const program = new Command();
 
-// Load config
-async function loadConfig() {
-  try {
-    const data = await fs.readFile(CONFIG_PATH, 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    return { neetcode: { directory: '' }, leetcode: { directory: '' } };
-  }
-}
+/**
+ * Work out which registered repo a command should act on.
+ * Precedence: an explicit --repo/-n/-l flag, then a repo-qualified ref like
+ * "neetcode#6", then the only registered repo if there is exactly one.
+ * Never guesses between repos — ids collide across them.
+ */
+function resolveTargetRepo(config, options = {}, ref = null) {
+  const repos = listRepos(config).filter(r => r.directory);
 
-// Save config
-async function saveConfig(config) {
-  await fs.writeFile(CONFIG_PATH, JSON.stringify(config, null, 2));
+  if (repos.length === 0) {
+    console.log(chalk.red('No repos registered. Use "leetdocs set <repo> dir <path>" first.'));
+    return null;
+  }
+
+  const alias = options.repo || (options.neetcode ? 'neetcode' : options.leetcode ? 'leetcode' : null);
+  if (alias) {
+    const repo = getRepo(config, alias);
+    if (!repo) {
+      console.log(chalk.red(`Unknown repo "${alias}". Registered: ${repos.map(r => r.key).join(', ')}`));
+      return null;
+    }
+    if (!repo.directory) {
+      console.log(chalk.red(`No directory set for ${repo.key}. Use "leetdocs set ${repo.key} dir <path>".`));
+      return null;
+    }
+    return repo;
+  }
+
+  if (ref) return getRepo(config, ref.repoKey);
+
+  if (repos.length === 1) return repos[0];
+
+  console.log(chalk.red('Which repo? Pass -r <repo> (or -n / -l).'));
+  console.log(chalk.gray(`Registered: ${repos.map(r => r.key).join(', ')}`));
+  return null;
 }
 
 program
   .name('leetdocs')
   .description('CLI tool to parse and generate LeetCode/NeetCode problem directories')
-  .version('1.0.0');
+  .version('1.1.0');
 
 // New command
 program
@@ -41,23 +76,14 @@ program
   .description('Create a new problem directory')
   .option('-n, --neetcode', 'Create for NeetCode')
   .option('-l, --leetcode', 'Create for LeetCode')
+  .option('-r, --repo <repo>', 'Create for a registered repo')
   .action(async (options) => {
     const config = await loadConfig();
-    const isNeetCode = options.neetcode;
-    const isLeetCode = options.leetcode;
+    const repo = resolveTargetRepo(config, options);
+    if (!repo) return;
 
-    if (!isNeetCode && !isLeetCode) {
-      console.log(chalk.red('Please specify either -n (NeetCode) or -l (LeetCode)'));
-      return;
-    }
-
-    const platform = isNeetCode ? 'neetcode' : 'leetcode';
-    const parentDir = config[platform].directory;
-
-    if (!parentDir) {
-      console.log(chalk.red(`No parent directory set for ${platform}. Use 'leetdocs set ${isNeetCode ? 'n' : 'l'} dir <path>' first.`));
-      return;
-    }
+    const parentDir = repo.directory;
+    const isNeetCode = repo.key === 'neetcode';
 
     // Prompt for link
     const { link } = await inquirer.prompt([
@@ -104,7 +130,7 @@ program
       return;
     }
 
-    // Get next available ID
+    // Get next available ID — scoped to this repo, ids restart per repo
     const nextId = await getNextId(parentDir);
 
     // Prompt for ID
@@ -112,7 +138,7 @@ program
       {
         type: 'input',
         name: 'customId',
-        message: `Do you have a specific ID? Leave empty and press enter to use the next ID (${nextId}):`,
+        message: `Do you have a specific ID? Leave empty and press enter to use the next ID for ${repo.key} (${nextId}):`,
         default: nextId.toString()
       }
     ]);
@@ -162,6 +188,7 @@ program
         console.log(chalk.green(`✓ Successfully created ${dirPath}`));
         console.log(chalk.green('✓ Created README.md and metadata.json'));
       }
+      console.log(chalk.gray(`  Reference it as ${makeUid(repo.key, problemData.id)}`));
     } catch (error) {
       console.log(chalk.red(`Error creating directory: ${error.message}`));
     }
@@ -171,30 +198,34 @@ program
 program
   .command('done')
   .description('Mark a problem as solved with today\'s date and auto-analyze complexity')
-  .argument('<id>', 'Problem ID number')
+  .argument('<id>', 'Problem ID, or repo-qualified ref like neetcode#116')
   .option('-n, --neetcode', 'NeetCode problem')
   .option('-l, --leetcode', 'LeetCode problem')
-  .action(async (id, options) => {
+  .option('-r, --repo <repo>', 'Registered repo the problem belongs to')
+  .action(async (idArg, options) => {
     const { analyzeComplexity } = await import('./analyzer.js');
     const config = await loadConfig();
-    const isNeetCode = options.neetcode;
-    const isLeetCode = options.leetcode;
 
-    if (!isNeetCode && !isLeetCode) {
-      console.log(chalk.red('Please specify either -n (NeetCode) or -l (LeetCode)'));
+    const ref = parseRef(config, idArg);
+    const repo = resolveTargetRepo(config, options, ref);
+    if (!repo) return;
+
+    // A ref carries its own repo — don't silently let a flag override it.
+    if (ref && ref.repoKey !== repo.key) {
+      console.log(chalk.red(`Conflict: "${idArg}" refers to ${ref.repoKey} but the flag says ${repo.key}. Pick one.`));
       return;
     }
 
-    const platform = isNeetCode ? 'neetcode' : 'leetcode';
-    const parentDir = config[platform].directory;
-
-    if (!parentDir) {
-      console.log(chalk.red(`No parent directory set for ${platform}.`));
+    const id = ref ? ref.id : parseInt(idArg, 10);
+    if (!Number.isFinite(id)) {
+      console.log(chalk.red(`Invalid problem id "${idArg}".`));
       return;
     }
 
-    // Find directory matching the ID
-    const paddedId = id.toString().padStart(4, '0');
+    const parentDir = repo.directory;
+
+    // Find directory matching the ID within this repo
+    const paddedId = padId(id);
     let targetDir = null;
 
     try {
@@ -211,7 +242,7 @@ program
     }
 
     if (!targetDir) {
-      console.log(chalk.red(`No directory found for ID ${id}`));
+      console.log(chalk.red(`No directory found for ${makeUid(repo.key, id)}`));
       return;
     }
 
@@ -307,53 +338,48 @@ program
       return;
     }
 
-    console.log(chalk.green(`✓ Marked problem ${id} as solved (${today})`));
+    console.log(chalk.green(`✓ Marked ${makeUid(repo.key, id)} as solved (${today})`));
     console.log(chalk.green(`✓ Complexity: Time ${complexity.time} | Space ${complexity.space}`));
     if (solutionCode) {
       console.log(chalk.green(`✓ Inserted ${solutionFilename} into README`));
     }
+
+    // Show where this leaves the repo
+    const problems = await loadProblems(config, [repo.key]);
+    const { repos: [progress] } = computeAllProgress(config, problems, [repo.key]);
+    console.log(chalk.gray(`  ${progress.label}: ${progress.finished}/${progress.denom} (${Math.round(progress.pct)}%)`));
   });
-
-// Helper: Load all metadata.json files from configured directories
-async function loadAllMetadata() {
-  const config = await loadConfig();
-  const problems = [];
-  const dirs = [config.neetcode?.directory, config.leetcode?.directory].filter(Boolean);
-
-  for (const parentDir of dirs) {
-    try {
-      const entries = await fs.readdir(parentDir, { withFileTypes: true });
-      for (const entry of entries) {
-        if (!entry.isDirectory()) continue;
-        if (entry.name.includes('template')) continue; // skip template dirs
-        const metaPath = path.join(parentDir, entry.name, 'metadata.json');
-        try {
-          const raw = await fs.readFile(metaPath, 'utf-8');
-          const meta = JSON.parse(raw);
-          meta._dir = entry.name;
-          problems.push(meta);
-        } catch {
-          // skip dirs without metadata
-        }
-      }
-    } catch {
-      // dir doesn't exist
-    }
-  }
-
-  return problems.sort((a, b) => (a.id || 0) - (b.id || 0));
-}
 
 // Search command
 program
   .command('search')
   .description('Search and filter problems')
-  .argument('[keyword]', 'Search by title keyword')
+  .argument('[keyword]', 'Search by title keyword, or a ref like neetcode#6')
   .option('-t, --topic <topic>', 'Filter by topic')
   .option('-d, --difficulty <difficulty>', 'Filter by difficulty (Easy/Medium/Hard)')
-  .option('-s, --status <status>', 'Filter by status (solved/unsolved)')
+  .option('-s, --status <status>', 'Filter by status (solved/unsolved/revisit)')
+  .option('-r, --repo <repo>', 'Filter by registered repo')
   .action(async (keyword, options) => {
-    let problems = await loadAllMetadata();
+    const config = await loadConfig();
+
+    let repoKeys = null;
+    if (options.repo) {
+      const key = resolveRepoKey(config, options.repo);
+      if (!key) {
+        console.log(chalk.red(`Unknown repo "${options.repo}". Registered: ${listRepos(config).map(r => r.key).join(', ') || 'none'}`));
+        return;
+      }
+      repoKeys = [key];
+    }
+
+    // A repo-qualified ref narrows to exactly one problem
+    const ref = keyword ? parseRef(config, keyword) : null;
+    if (ref) {
+      repoKeys = [ref.repoKey];
+      keyword = null;
+    }
+
+    let problems = await loadProblems(config, repoKeys);
 
     if (problems.length === 0) {
       console.log(chalk.yellow('No problems found. Make sure your directories are configured with "leetdocs set".'));
@@ -361,6 +387,9 @@ program
     }
 
     // Apply filters
+    if (ref) {
+      problems = problems.filter(p => p.id === ref.id);
+    }
     if (keyword) {
       const kw = keyword.toLowerCase();
       problems = problems.filter(p => p.title?.toLowerCase().includes(kw) || p.slug?.includes(kw));
@@ -383,49 +412,173 @@ program
       return;
     }
 
-    // Display header
-    const header = `${'ID'.padEnd(5)} ${'Title'.padEnd(35)} ${'Diff'.padEnd(8)} ${'Status'.padEnd(10)} ${'Topics'.padEnd(30)} ${'Complexity'}`;
-    console.log(chalk.bold.white(header));
-    console.log(chalk.gray('─'.repeat(110)));
+    // Repo column widens to fit whichever repos are in the results
+    const repoW = Math.max(4, ...problems.map(p => (p._repo || '').length));
 
-    // Display rows
+    const header = `${'Repo'.padEnd(repoW)} ${'ID'.padEnd(6)} ${'Title'.padEnd(35)} ${'Diff'.padEnd(8)} ${'Status'.padEnd(8)} ${'Topics'.padEnd(30)} ${'Complexity'}`;
+    console.log(chalk.bold.white(header));
+    console.log(chalk.gray('─'.repeat(header.length)));
+
     for (const p of problems) {
-      const id = String(p.id || '?').padStart(3, '0').padEnd(5);
+      const repoName = (p._repo || '').padEnd(repoW);
+      const id = `#${padId(p.id)}`.padEnd(6);
       const title = (p.title || '').padEnd(35).substring(0, 35);
       const diff = (p.difficulty || '').padEnd(8);
-      const statusIcon = p.status === 'solved' ? '✅' : p.status === 'revisit' ? '🔁' : '❌';
-      const status = statusIcon.padEnd(10);
+      const statusIcon = isFinished(p) ? '✅' : p.status === 'revisit' ? '🔁' : '❌';
+      const status = statusIcon.padEnd(7); // emoji renders 2 columns wide
       const topics = (p.topics || []).join(', ').padEnd(30).substring(0, 30);
       const comp = p.complexity ? `${p.complexity.time} / ${p.complexity.space}` : '';
 
       const diffColor = p.difficulty === 'Easy' ? chalk.green : p.difficulty === 'Medium' ? chalk.yellow : chalk.red;
 
-      console.log(`${chalk.cyan(id)} ${chalk.white(title)} ${diffColor(diff)} ${status} ${chalk.gray(topics)} ${chalk.blue(comp)}`);
+      console.log(`${chalk.magenta(repoName)} ${chalk.cyan(id)} ${chalk.white(title)} ${diffColor(diff)} ${status} ${chalk.gray(topics)} ${chalk.blue(comp)}`);
     }
 
-    console.log(chalk.gray(`\n${problems.length} problem(s) found`));
+    // Per-repo counts, so a mixed result set is never ambiguous
+    const counts = {};
+    for (const p of problems) counts[p._repo] = (counts[p._repo] || 0) + 1;
+    const breakdown = Object.entries(counts).map(([k, v]) => `${k}: ${v}`).join(', ');
+    console.log(chalk.gray(`\n${problems.length} problem(s) found (${breakdown})`));
+  });
+
+// Progress command
+program
+  .command('progress')
+  .description('Show how many problems you have finished out of each repo\'s total')
+  .argument('[repo]', 'Limit to one registered repo')
+  .action(async (repoArg) => {
+    const config = await loadConfig();
+    const repos = listRepos(config);
+
+    if (repos.length === 0) {
+      console.log(chalk.yellow('No repos registered. Use "leetdocs set <repo> dir <path>" first.'));
+      return;
+    }
+
+    let repoKeys = null;
+    if (repoArg) {
+      const key = resolveRepoKey(config, repoArg);
+      if (!key) {
+        console.log(chalk.red(`Unknown repo "${repoArg}". Registered: ${repos.map(r => r.key).join(', ')}`));
+        return;
+      }
+      repoKeys = [key];
+    }
+
+    const problems = await loadProblems(config, repoKeys);
+    const { repos: byRepo, overall } = computeAllProgress(config, problems, repoKeys);
+
+    const labelW = Math.max(...byRepo.map(r => r.label.length));
+
+    console.log();
+    console.log(chalk.bold.hex('#6366f1')('  📈 Progress'));
+    console.log(chalk.dim('  ' + '─'.repeat(64)));
+
+    for (const r of byRepo) {
+      const bar = renderProgressBar(r.pct, 24);
+      const fraction = `${r.finished}/${r.denom}`.padEnd(9);
+      const pct = `${Math.round(r.pct)}%`.padStart(4);
+      console.log(`  ${chalk.bold(r.label.padEnd(labelW))}  ${bar}  ${chalk.bold(fraction)} ${chalk.dim(pct)} done`);
+
+      const notes = [];
+      if (r.hasGoal) {
+        notes.push(`goal ${r.goal}`);
+        notes.push(`${r.tracked} tracked`);
+      } else {
+        notes.push(`${r.tracked} tracked (no goal set — run "leetdocs set ${r.key} total <n>")`);
+      }
+      if (r.revisit > 0) notes.push(`${r.revisit} to revisit`);
+      notes.push(`${r.remaining} to go`);
+      console.log(chalk.dim(`  ${' '.repeat(labelW)}  ${notes.join(' · ')}`));
+    }
+
+    if (byRepo.length > 1) {
+      console.log(chalk.dim('  ' + '─'.repeat(64)));
+      const bar = renderProgressBar(overall.pct, 24);
+      const fraction = `${overall.finished}/${overall.denom}`.padEnd(9);
+      const pct = `${Math.round(overall.pct)}%`.padStart(4);
+      console.log(`  ${chalk.bold('Total'.padEnd(labelW))}  ${bar}  ${chalk.bold(fraction)} ${chalk.dim(pct)} done`);
+    }
+
+    console.log();
+  });
+
+// Repos command
+program
+  .command('repos')
+  .description('List registered repos and their configuration')
+  .action(async () => {
+    const config = await loadConfig();
+    const repos = listRepos(config);
+
+    if (repos.length === 0) {
+      console.log(chalk.yellow('No repos registered. Use "leetdocs set <repo> dir <path>" to register one.'));
+      return;
+    }
+
+    console.log();
+    for (const repo of repos) {
+      console.log(`  ${chalk.bold.magenta(repo.key)} ${chalk.dim(`(${repo.label})`)}`);
+      console.log(`    ${chalk.dim('dir  ')} ${repo.directory || chalk.red('not set')}`);
+      console.log(`    ${chalk.dim('total')} ${repo.total ?? chalk.dim('not set')}`);
+      console.log(`    ${chalk.dim('ref  ')} ${chalk.gray(makeUid(repo.key, 1))}`);
+    }
+    console.log();
+  });
+
+// Unregister command
+program
+  .command('unregister')
+  .description('Remove a repo from the registry (does not touch any files on disk)')
+  .argument('<repo>', 'Repo key or alias')
+  .action(async (repoArg) => {
+    const config = await loadConfig();
+    const key = resolveRepoKey(config, repoArg);
+
+    if (!key) {
+      console.log(chalk.red(`Unknown repo "${repoArg}". Registered: ${listRepos(config).map(r => r.key).join(', ') || 'none'}`));
+      return;
+    }
+
+    delete config.repos[key];
+    await saveConfig(config);
+    console.log(chalk.green(`✓ Unregistered "${key}" (its files were left untouched)`));
   });
 
 // Viz command
 program
   .command('viz')
   .description('Generate a visual roadmap of your progress')
-  .action(async () => {
+  .option('-r, --repo <repo>', 'Limit to one registered repo')
+  .action(async (options) => {
     const { generateVisualization, printTerminalDashboard } = await import('./visualizer.js');
-    const problems = await loadAllMetadata();
+    const config = await loadConfig();
+
+    let repoKeys = null;
+    if (options.repo) {
+      const key = resolveRepoKey(config, options.repo);
+      if (!key) {
+        console.log(chalk.red(`Unknown repo "${options.repo}". Registered: ${listRepos(config).map(r => r.key).join(', ') || 'none'}`));
+        return;
+      }
+      repoKeys = [key];
+    }
+
+    const problems = await loadProblems(config, repoKeys);
 
     if (problems.length === 0) {
       console.log(chalk.yellow('No problems found.'));
       return;
     }
 
-    printTerminalDashboard(problems);
+    const progress = computeAllProgress(config, problems, repoKeys);
+    printTerminalDashboard(problems, progress);
 
-    const config = await loadConfig();
-    const outputDir = config.neetcode?.directory || config.leetcode?.directory || __dirname;
+    const repos = listRepos(config).filter(r => r.directory);
+    const outputDir = repos[0]?.directory || __dirname;
     const outputPath = path.join(path.dirname(outputDir), 'roadmap.html');
 
-    await generateVisualization(problems, outputPath);
+    await generateVisualization(problems, outputPath, progress);
     console.log(chalk.green(`✓ Generated roadmap at ${outputPath}`));
 
     // Open in browser
@@ -436,25 +589,57 @@ program
 // Set command
 program
   .command('set')
-  .description('Set configuration')
-  .argument('<platform>', 'Platform: n (neetcode) or l (leetcode)')
-  .argument('<key>', 'Configuration key (e.g., dir)')
+  .description('Set repo configuration (dir, total, label)')
+  .argument('<repo>', 'Repo key or alias: n (neetcode), l (leetcode), or any registered key')
+  .argument('<key>', 'Configuration key: dir, total, or label')
   .argument('<value>', 'Configuration value')
-  .action(async (platform, key, value) => {
+  .action(async (repoArg, key, value) => {
     const config = await loadConfig();
-    const platformKey = platform === 'n' ? 'neetcode' : platform === 'l' ? 'leetcode' : null;
+    if (!config.repos) config.repos = {};
 
-    if (!platformKey) {
-      console.log(chalk.red('Invalid platform. Use "n" for neetcode or "l" for leetcode'));
+    const existingKey = resolveRepoKey(config, repoArg);
+
+    if (!existingKey && key !== 'dir') {
+      console.log(chalk.red(`Unknown repo "${repoArg}". Register it first with "leetdocs set ${repoArg} dir <path>".`));
       return;
     }
 
-    if (key === 'dir') {
-      config[platformKey].directory = path.resolve(value);
-      await saveConfig(config);
-      console.log(chalk.green(`✓ Set ${platformKey} directory to: ${config[platformKey].directory}`));
-    } else {
-      console.log(chalk.red('Invalid key. Currently only "dir" is supported'));
+    // `set <new-key> dir <path>` registers a brand new repo
+    const repoKey = existingKey || repoArg.trim().toLowerCase();
+    if (!config.repos[repoKey]) {
+      config.repos[repoKey] = { label: repoKey, directory: '', total: null };
+    }
+
+    switch (key) {
+      case 'dir': {
+        config.repos[repoKey].directory = path.resolve(value);
+        await saveConfig(config);
+        console.log(chalk.green(`✓ Set ${repoKey} directory to: ${config.repos[repoKey].directory}`));
+        if (!existingKey) console.log(chalk.gray(`  Registered new repo "${repoKey}". Set a goal with "leetdocs set ${repoKey} total <n>".`));
+        break;
+      }
+      case 'total': {
+        const cleared = ['none', 'null', 'clear', '0'].includes(String(value).toLowerCase());
+        const total = cleared ? null : parseInt(value, 10);
+        if (!cleared && (!Number.isFinite(total) || total <= 0)) {
+          console.log(chalk.red(`Invalid total "${value}". Pass a positive number, or "none" to clear it.`));
+          return;
+        }
+        config.repos[repoKey].total = total;
+        await saveConfig(config);
+        console.log(total === null
+          ? chalk.green(`✓ Cleared ${repoKey} total`)
+          : chalk.green(`✓ Set ${repoKey} total to ${total} problems`));
+        break;
+      }
+      case 'label': {
+        config.repos[repoKey].label = value;
+        await saveConfig(config);
+        console.log(chalk.green(`✓ Set ${repoKey} label to "${value}"`));
+        break;
+      }
+      default:
+        console.log(chalk.red('Invalid key. Supported: dir, total, label'));
     }
   });
 

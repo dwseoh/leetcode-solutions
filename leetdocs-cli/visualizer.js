@@ -202,12 +202,14 @@ function getCategoryForProblem(p) {
 
 // ─── Terminal dashboard ───────────────────────────────────────────────────────
 
-export function printTerminalDashboard(problems) {
+export function printTerminalDashboard(problems, progress = null) {
     const activityMap = buildActivityMap(problems);
     const streaks = calculateStreaks(activityMap);
 
     const totalSolved = problems.filter(p => p.status === 'solved').length;
-    const total = problems.length;
+    // Denominator is each repo's registered goal (e.g. 150 for NeetCode 150)
+    // when one is set, not just what happens to be tracked on disk.
+    const total = progress?.overall?.denom || problems.length;
     const pct = total > 0 ? Math.round((totalSolved / total) * 100) : 0;
 
     const diffSolved = {
@@ -242,6 +244,22 @@ export function printTerminalDashboard(problems) {
     console.log(`  ${chalk.green('Easy')}     ${terminalBar(easyPct, 28, 'green')} ${chalk.green(diffSolved.Easy)}/${diffTotal.Easy}`);
     console.log(`  ${chalk.yellow('Medium')}   ${terminalBar(medPct, 28, 'yellow')} ${chalk.yellow(diffSolved.Medium)}/${diffTotal.Medium}`);
     console.log(`  ${chalk.red('Hard')}     ${terminalBar(hardPct, 28, 'red')} ${chalk.red(diffSolved.Hard)}/${diffTotal.Hard}`);
+
+    // ── Per-repo progress ──
+    if (progress?.repos?.length) {
+        console.log();
+        console.log(divider);
+        console.log(chalk.bold('  Repos'));
+        console.log();
+
+        const labelW = Math.max(...progress.repos.map(r => r.label.length));
+        for (const r of progress.repos) {
+            const color = r.pct >= 80 ? 'green' : r.pct >= 40 ? 'yellow' : r.pct > 0 ? 'red' : 'dim';
+            const bar = terminalBar(r.pct, 24, color);
+            const goalNote = r.hasGoal ? '' : chalk.dim(' (no goal set)');
+            console.log(`  ${chalk.magenta(r.label.padEnd(labelW))}  ${bar}  ${chalk.bold(`${r.finished}/${r.denom}`)} ${chalk.dim(`(${Math.round(r.pct)}%)`)}${goalNote}`);
+        }
+    }
 
     // ── Streaks ──
     console.log();
@@ -386,16 +404,36 @@ function categorizeProblems(problems) {
 
 // ─── HTML generation ──────────────────────────────────────────────────────────
 
-export async function generateVisualization(problems, outputPath) {
+export async function generateVisualization(problems, outputPath, progress = null) {
     const categories = categorizeProblems(problems);
     const activityMap = buildActivityMap(problems);
     const streaks = calculateStreaks(activityMap);
     const recentSolves = getRecentSolves(problems, 10);
 
     const totalSolved = problems.filter(p => p.status === 'solved').length;
-    const totalProblems = problems.length;
+    // Prefer each repo's registered goal over the tracked-on-disk count.
+    const totalProblems = progress?.overall?.denom || problems.length;
     const topicsCovered = new Set(problems.flatMap(p => p.topics || [])).size;
     const completionPct = Math.round((totalSolved / Math.max(totalProblems, 1)) * 100);
+
+    const repoProgressHtml = (progress?.repos || []).map(r => {
+        const pct = Math.min(r.pct, 100);
+        const level = pct >= 80 ? 'mastered' : pct >= 30 ? 'in-progress' : pct > 0 ? 'needs-work' : 'not-started';
+        const sub = r.hasGoal
+            ? `${r.tracked} tracked &bull; ${r.remaining} to go`
+            : `${r.tracked} tracked &bull; no goal set`;
+        return `
+    <div class="repo-row">
+      <div class="repo-head">
+        <span class="repo-name">${r.label} <span class="repo-key">${r.key}</span></span>
+        <span class="repo-fraction">${r.finished} / ${r.denom} &bull; ${Math.round(r.pct)}%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill ${level}" style="width:${pct.toFixed(1)}%"></div>
+      </div>
+      <div class="repo-sub">${sub}</div>
+    </div>`;
+    }).join('');
 
     const diffCounts = {
         Easy: problems.filter(p => p.difficulty === 'Easy').length,
@@ -423,6 +461,7 @@ export async function generateVisualization(problems, outputPath) {
           <span class="recent-date">${date}</span>
           <span class="recent-status">${icon}</span>
           <a class="recent-title" href="${p.url || '#'}" target="_blank">${p.title || 'Untitled'}</a>
+          ${p._uid ? `<span class="problem-repo">${p._uid}</span>` : ''}
           <span class="problem-diff ${diffClass}">${p.difficulty || ''}</span>
           ${time ? `<span class="complexity-badge time">${time}</span>` : ''}
           ${space ? `<span class="complexity-badge space">${space}</span>` : ''}
@@ -659,6 +698,51 @@ export async function generateVisualization(problems, outputPath) {
 
   .diff-count { width: 60px; text-align: right; font-size: 0.85rem; color: #888; }
 
+  /* ── Repo progress ── */
+  .repo-section {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 32px;
+  }
+
+  .repo-row { margin-bottom: 18px; }
+  .repo-row:last-child { margin-bottom: 0; }
+
+  .repo-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .repo-name { font-size: 0.95rem; font-weight: 600; color: #ddd; }
+
+  .repo-key {
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: #c084fc;
+    background: rgba(168,85,247,0.14);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+
+  .repo-fraction { font-size: 0.85rem; color: #888; font-variant-numeric: tabular-nums; }
+  .repo-sub { font-size: 0.72rem; color: #555; margin-top: -8px; }
+
+  .problem-repo {
+    font-family: monospace;
+    font-size: 0.66rem;
+    color: #c084fc;
+    background: rgba(168,85,247,0.12);
+    padding: 1px 5px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
   /* ── Recent activity ── */
   .recent-section {
     background: rgba(255,255,255,0.04);
@@ -776,6 +860,7 @@ export async function generateVisualization(problems, outputPath) {
   .progress-bar-fill.mastered { background: linear-gradient(90deg, #22c55e, #4ade80); }
   .progress-bar-fill.in-progress { background: linear-gradient(90deg, #eab308, #facc15); }
   .progress-bar-fill.needs-work { background: linear-gradient(90deg, #ef4444, #f87171); }
+  .progress-bar-fill.not-started { background: rgba(255,255,255,0.12); }
 
   .problem-list {
     display: none;
@@ -901,6 +986,13 @@ export async function generateVisualization(problems, outputPath) {
     </div>
   </div>
 
+  <!-- Per-repo Progress -->
+  ${repoProgressHtml ? `
+  <div class="repo-section">
+    <div class="section-heading">📚 Progress by Repo</div>
+    ${repoProgressHtml}
+  </div>` : ''}
+
   <!-- Activity Heatmap -->
   <div class="heatmap-section">
     <div class="section-heading">📅 Activity — Last 52 Weeks</div>
@@ -974,6 +1066,7 @@ export async function generateVisualization(problems, outputPath) {
             <span class="problem-status">${icon}</span>
             <a href="${p.url || '#'}" target="_blank">${p.title || 'Untitled'}</a>
             <div class="problem-meta">
+              ${p._uid ? `<span class="problem-repo">${p._uid}</span>` : ''}
               <span class="problem-diff ${diffClass}">${p.difficulty || ''}</span>
               ${date ? `<span class="problem-date">${date}</span>` : ''}
               ${time ? `<span class="complexity-badge time">${time}</span>` : ''}
