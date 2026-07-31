@@ -1,0 +1,29 @@
+{
+  "id": 118,
+  "title": "Distinct Subsequences",
+  "slug": "distinct-subsequences",
+  "url": "https://leetcode.com/problems/distinct-subsequences/",
+  "difficulty": "Hard",
+  "acceptance_rate": 52.3,
+  "status": "solved",
+  "date_solved": "2026-07-31",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Unique Good Subsequences",
+      "slug": "number-of-unique-good-subsequences",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
