@@ -1,0 +1,34 @@
+{
+  "id": 778,
+  "title": "Swim in Rising Water",
+  "slug": "swim-in-rising-water",
+  "url": "https://leetcode.com/problems/swim-in-rising-water/",
+  "difficulty": "Hard",
+  "acceptance_rate": 68.1,
+  "status": "solved",
+  "date_solved": "2026-07-30",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(m * n * log(m * n))",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "binary-search",
+    "dfs",
+    "bfs",
+    "union-find",
+    "heap",
+    "matrix"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Path With Minimum Effort",
+      "slug": "path-with-minimum-effort",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
