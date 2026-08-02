@@ -1,0 +1,31 @@
+{
+  "id": 120,
+  "title": "Burst Balloons",
+  "slug": "burst-balloons",
+  "url": "https://leetcode.com/problems/burst-balloons/",
+  "difficulty": "Hard",
+  "acceptance_rate": 64.1,
+  "status": "solved",
+  "date_solved": "2026-08-02",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^3)",
+    "space": "O(n^2)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimum Cost to Merge Stones",
+      "slug": "minimum-cost-to-merge-stones",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
