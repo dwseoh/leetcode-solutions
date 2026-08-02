@@ -1,0 +1,61 @@
+{
+  "id": 119,
+  "title": "Edit Distance",
+  "slug": "edit-distance",
+  "url": "https://leetcode.com/problems/edit-distance/",
+  "difficulty": "Medium",
+  "acceptance_rate": 61,
+  "status": "solved",
+  "date_solved": "2026-08-02",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "One Edit Distance",
+      "slug": "one-edit-distance",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Delete Operation for Two Strings",
+      "slug": "delete-operation-for-two-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum ASCII Delete Sum for Two Strings",
+      "slug": "minimum-ascii-delete-sum-for-two-strings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Uncrossed Lines",
+      "slug": "uncrossed-lines",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum White Tiles After Covering With Carpets",
+      "slug": "minimum-white-tiles-after-covering-with-carpets",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Longest Palindrome After Substring Concatenation II",
+      "slug": "longest-palindrome-after-substring-concatenation-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Minimum Steps to Convert String with Operations",
+      "slug": "minimum-steps-to-convert-string-with-operations",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
