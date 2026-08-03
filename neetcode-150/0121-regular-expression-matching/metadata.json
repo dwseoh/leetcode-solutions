@@ -1,0 +1,32 @@
+{
+  "id": 121,
+  "title": "Regular Expression Matching",
+  "slug": "regular-expression-matching",
+  "url": "https://leetcode.com/problems/regular-expression-matching/",
+  "difficulty": "Hard",
+  "acceptance_rate": 31.5,
+  "status": "solved",
+  "date_solved": "2026-08-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming",
+    "recursion"
+  ],
+  "patterns": [
+    "dynamic-programming"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Wildcard Matching",
+      "slug": "wildcard-matching",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
