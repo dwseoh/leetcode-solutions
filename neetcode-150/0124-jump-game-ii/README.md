@@ -4,8 +4,8 @@
 **Acceptance Rate:** `43.3%`  
 **Topics:** `array` `dynamic-programming` `greedy`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-08-05  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/jump-game-ii/)
 
@@ -53,19 +53,33 @@ Output: 2
 2. 
 3. 
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(1)`
 
 ---
 
 ## Solution
 
 ```cpp
-// C++ solution
+class Solution {
+public:
+    int jump(vector<int>& nums) {
+        int jumps = 0, currentEnd = 0, farthest = 0;
+        
+        for (int i = 0; i<nums.size()-1; i++) {
+            farthest = max(farthest,i+nums[i]);
 
+            if (i==currentEnd) {
+                jumps++;
+                currentEnd = farthest;
+            }
+        }
 
+        return jumps;
+        
+    }
+};
 ```
-
 ---
 
 ## Alternative Approaches
