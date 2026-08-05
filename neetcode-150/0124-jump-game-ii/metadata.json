@@ -1,0 +1,62 @@
+{
+  "id": 124,
+  "title": "Jump Game II",
+  "slug": "jump-game-ii",
+  "url": "https://leetcode.com/problems/jump-game-ii/",
+  "difficulty": "Medium",
+  "acceptance_rate": 43.3,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "greedy"
+  ],
+  "patterns": [
+    "greedy"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Jump Game",
+      "slug": "jump-game",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game III",
+      "slug": "jump-game-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game VII",
+      "slug": "jump-game-vii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Jump Game VIII",
+      "slug": "jump-game-viii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Number of Visited Cells in a Grid",
+      "slug": "minimum-number-of-visited-cells-in-a-grid",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Maximum Number of Jumps to Reach the Last Index",
+      "slug": "maximum-number-of-jumps-to-reach-the-last-index",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Visit Array Positions to Maximize Score",
+      "slug": "visit-array-positions-to-maximize-score",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
