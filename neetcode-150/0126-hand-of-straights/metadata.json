@@ -1,0 +1,27 @@
+{
+  "id": 126,
+  "title": "Hand of Straights",
+  "slug": "hand-of-straights",
+  "url": "https://leetcode.com/problems/hand-of-straights/",
+  "difficulty": "Medium",
+  "acceptance_rate": 58.3,
+  "status": "solved",
+  "date_solved": "2026-08-07",
+  "attempts": 3,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "greedy",
+    "sorting"
+  ],
+  "patterns": [
+    "greedy"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
