@@ -1,0 +1,25 @@
+{
+  "id": 127,
+  "title": "Merge Triplets to Form Target Triplet",
+  "slug": "merge-triplets-to-form-target-triplet",
+  "url": "https://leetcode.com/problems/merge-triplets-to-form-target-triplet/",
+  "difficulty": "Medium",
+  "acceptance_rate": 69.3,
+  "status": "solved",
+  "date_solved": "2026-08-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "greedy"
+  ],
+  "patterns": [
+    "greedy"
+  ],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
