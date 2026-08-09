@@ -4,8 +4,8 @@
 **Acceptance Rate:** `40.4%`  
 **Topics:** `string` `dynamic-programming` `stack` `greedy` `bracket-sequences`  
 **Companies:** `company1` `company2`  
-**Date Solved:** YYYY-MM-DD  
-**Status:** ✅ Solved / 🔁 Revisit / ❌ Unsolved  
+**Date Solved:** 2026-08-09  
+**Status:** ✅ Solved  
 
 🔗 [LeetCode Link](https://leetcode.com/problems/valid-parenthesis-string/)
 
@@ -58,19 +58,36 @@ Output: true
 2. 
 3. 
 
-**Time Complexity:** `O()`  
-**Space Complexity:** `O()`
+**Time Complexity:** `O(n)`  
+**Space Complexity:** `O(1)`
 
 ---
 
 ## Solution
 
-```cpp
-// C++ solution
+```python
+class Solution:
+    def checkValidString(self, s: str) -> bool:
+        low = 0   # min possible open brackets
+        high = 0  # max possible open brackets
 
+        for c in s:
+            if c == '(':
+                low += 1
+                high += 1
+            elif c == ')':
+                low -= 1
+                high -= 1
+            else:  # '*'
+                low -= 1
+                high += 1
 
+            if high < 0:
+                return False
+            low = max(low, 0)
+
+        return low == 0
 ```
-
 ---
 
 ## Alternative Approaches
