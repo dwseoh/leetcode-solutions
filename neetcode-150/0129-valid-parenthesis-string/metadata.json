@@ -1,0 +1,39 @@
+{
+  "id": 129,
+  "title": "Valid Parenthesis String",
+  "slug": "valid-parenthesis-string",
+  "url": "https://leetcode.com/problems/valid-parenthesis-string/",
+  "difficulty": "Medium",
+  "acceptance_rate": 40.4,
+  "status": "unsolved",
+  "date_solved": "YYYY-MM-DD",
+  "attempts": 0,
+  "complexity": {
+    "time": "O()",
+    "space": "O()"
+  },
+  "topics": [
+    "string",
+    "dynamic-programming",
+    "stack",
+    "greedy",
+    "bracket-sequences"
+  ],
+  "patterns": [
+    "greedy"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Special Binary String",
+      "slug": "special-binary-string",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Check if a Parentheses String Can Be Valid",
+      "slug": "check-if-a-parentheses-string-can-be-valid",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
