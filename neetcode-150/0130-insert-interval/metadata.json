@@ -1,0 +1,38 @@
+{
+  "id": 130,
+  "title": "Insert Interval",
+  "slug": "insert-interval",
+  "url": "https://leetcode.com/problems/insert-interval/",
+  "difficulty": "Medium",
+  "acceptance_rate": 45.8,
+  "status": "solved",
+  "date_solved": "2026-08-12",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Merge Intervals",
+      "slug": "merge-intervals",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Range Module",
+      "slug": "range-module",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Integers in Intervals",
+      "slug": "count-integers-in-intervals",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
