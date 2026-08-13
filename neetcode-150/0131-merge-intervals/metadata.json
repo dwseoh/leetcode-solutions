@@ -1,0 +1,117 @@
+{
+  "id": 131,
+  "title": "Merge Intervals",
+  "slug": "merge-intervals",
+  "url": "https://leetcode.com/problems/merge-intervals/",
+  "difficulty": "Medium",
+  "acceptance_rate": 52.5,
+  "status": "solved",
+  "date_solved": "2026-08-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "sorting",
+    "quicksort"
+  ],
+  "patterns": [
+    "intervals"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Insert Interval",
+      "slug": "insert-interval",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Meeting Rooms",
+      "slug": "meeting-rooms",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Meeting Rooms II",
+      "slug": "meeting-rooms-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Teemo Attacking",
+      "slug": "teemo-attacking",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Add Bold Tag in String",
+      "slug": "add-bold-tag-in-string",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Range Module",
+      "slug": "range-module",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Employee Free Time",
+      "slug": "employee-free-time",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Partition Labels",
+      "slug": "partition-labels",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Interval List Intersections",
+      "slug": "interval-list-intersections",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Amount of New Area Painted Each Day",
+      "slug": "amount-of-new-area-painted-each-day",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Longest Substring of One Repeating Character",
+      "slug": "longest-substring-of-one-repeating-character",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Count Integers in Intervals",
+      "slug": "count-integers-in-intervals",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Divide Intervals Into Minimum Number of Groups",
+      "slug": "divide-intervals-into-minimum-number-of-groups",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Determine if Two Events Have Conflict",
+      "slug": "determine-if-two-events-have-conflict",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Count Ways to Group Overlapping Ranges",
+      "slug": "count-ways-to-group-overlapping-ranges",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Points That Intersect With Cars",
+      "slug": "points-that-intersect-with-cars",
+      "difficulty": "Easy"
+    },
+    {
+      "title": "Count Days Without Meetings",
+      "slug": "count-days-without-meetings",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimize Connected Groups by Inserting Interval",
+      "slug": "minimize-connected-groups-by-inserting-interval",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
