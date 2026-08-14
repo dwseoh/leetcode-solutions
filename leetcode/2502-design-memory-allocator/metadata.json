@@ -1,0 +1,25 @@
+{
+  "id": 2502,
+  "title": "Design Memory Allocator",
+  "slug": "design-memory-allocator",
+  "url": "https://leetcode.com/problems/design-memory-allocator/",
+  "difficulty": "Medium",
+  "acceptance_rate": 50.5,
+  "status": "solved",
+  "date_solved": "2026-08-14",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "design",
+    "simulation"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
