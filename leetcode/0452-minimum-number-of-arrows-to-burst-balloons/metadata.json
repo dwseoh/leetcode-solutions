@@ -1,0 +1,35 @@
+{
+  "id": 452,
+  "title": "Minimum Number of Arrows to Burst Balloons",
+  "slug": "minimum-number-of-arrows-to-burst-balloons",
+  "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+  "difficulty": "Medium",
+  "acceptance_rate": 61.8,
+  "status": "solved",
+  "date_solved": "2026-08-15",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "greedy",
+    "sorting"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Meeting Rooms II",
+      "slug": "meeting-rooms-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Non-overlapping Intervals",
+      "slug": "non-overlapping-intervals",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
