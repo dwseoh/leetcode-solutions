@@ -1,0 +1,38 @@
+{
+  "id": 132,
+  "title": "Non-overlapping Intervals",
+  "slug": "non-overlapping-intervals",
+  "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+  "difficulty": "Medium",
+  "acceptance_rate": 57.6,
+  "status": "solved",
+  "date_solved": "2026-08-16",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "dynamic-programming",
+    "greedy",
+    "sorting"
+  ],
+  "patterns": [
+    "intervals"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimum Number of Arrows to Burst Balloons",
+      "slug": "minimum-number-of-arrows-to-burst-balloons",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Determine if Two Events Have Conflict",
+      "slug": "determine-if-two-events-have-conflict",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
