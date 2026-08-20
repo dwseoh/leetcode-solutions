@@ -1,0 +1,30 @@
+{
+  "id": 136,
+  "title": "Rotate Image",
+  "slug": "rotate-image",
+  "url": "https://leetcode.com/problems/rotate-image/",
+  "difficulty": "Medium",
+  "acceptance_rate": 80.6,
+  "status": "solved",
+  "date_solved": "2026-08-20",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^4)",
+    "space": "O(n * m)"
+  },
+  "topics": [
+    "array",
+    "math",
+    "matrix"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Determine Whether Matrix Can Be Obtained By Rotation",
+      "slug": "determine-whether-matrix-can-be-obtained-by-rotation",
+      "difficulty": "Easy"
+    }
+  ],
+  "notes": ""
+}
