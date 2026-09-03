@@ -1,0 +1,32 @@
+{
+  "id": 135,
+  "title": "Minimum Interval to Include Each Query",
+  "slug": "minimum-interval-to-include-each-query",
+  "url": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+  "difficulty": "Hard",
+  "acceptance_rate": 55.1,
+  "status": "solved",
+  "date_solved": "2026-09-03",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n + m log m)",
+    "space": "O(n + m)"
+  },
+  "topics": [
+    "array",
+    "binary-search",
+    "sweep-line",
+    "sorting",
+    "heap"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Number of Flowers in Full Bloom",
+      "slug": "number-of-flowers-in-full-bloom",
+      "difficulty": "Hard"
+    }
+  ],
+  "notes": ""
+}
