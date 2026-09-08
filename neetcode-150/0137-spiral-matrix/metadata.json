@@ -1,0 +1,42 @@
+{
+  "id": 137,
+  "title": "Spiral Matrix",
+  "slug": "spiral-matrix",
+  "url": "https://leetcode.com/problems/spiral-matrix/",
+  "difficulty": "Medium",
+  "acceptance_rate": 57.8,
+  "status": "solved",
+  "date_solved": "2026-09-08",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n * m)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "matrix",
+    "simulation"
+  ],
+  "patterns": [
+    "math"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Spiral Matrix II",
+      "slug": "spiral-matrix-ii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Spiral Matrix III",
+      "slug": "spiral-matrix-iii",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Spiral Matrix IV",
+      "slug": "spiral-matrix-iv",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
