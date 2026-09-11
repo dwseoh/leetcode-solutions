@@ -1,0 +1,26 @@
+{
+  "id": 143,
+  "title": "Detect Squares",
+  "slug": "detect-squares",
+  "url": "https://leetcode.com/problems/detect-squares/",
+  "difficulty": "Medium",
+  "acceptance_rate": 53,
+  "status": "solved",
+  "date_solved": "2026-09-11",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "design",
+    "counting",
+    "data-stream"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
