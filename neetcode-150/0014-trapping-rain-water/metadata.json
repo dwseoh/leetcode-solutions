@@ -1,0 +1,54 @@
+{
+  "id": 14,
+  "title": "Trapping Rain Water",
+  "slug": "trapping-rain-water",
+  "url": "https://leetcode.com/problems/trapping-rain-water/",
+  "difficulty": "Hard",
+  "acceptance_rate": 68.2,
+  "status": "solved",
+  "date_solved": "2026-09-16",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "two-pointers",
+    "dynamic-programming",
+    "stack",
+    "monotonic-stack"
+  ],
+  "patterns": [
+    "two-pointers"
+  ],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Container With Most Water",
+      "slug": "container-with-most-water",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Product of Array Except Self",
+      "slug": "product-of-array-except-self",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Trapping Rain Water II",
+      "slug": "trapping-rain-water-ii",
+      "difficulty": "Hard"
+    },
+    {
+      "title": "Pour Water",
+      "slug": "pour-water",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Maximum Value of an Ordered Triplet II",
+      "slug": "maximum-value-of-an-ordered-triplet-ii",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
