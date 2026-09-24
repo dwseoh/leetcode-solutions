@@ -1,0 +1,52 @@
+{
+  "id": 1658,
+  "title": "Minimum Operations to Reduce X to Zero",
+  "slug": "minimum-operations-to-reduce-x-to-zero",
+  "url": "https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/",
+  "difficulty": "Medium",
+  "acceptance_rate": 45,
+  "status": "solved",
+  "date_solved": "2026-09-24",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n^2)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "binary-search",
+    "sliding-window",
+    "prefix-sum"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Minimum Size Subarray Sum",
+      "slug": "minimum-size-subarray-sum",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Subarray Sum Equals K",
+      "slug": "subarray-sum-equals-k",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Operations to Convert Number",
+      "slug": "minimum-operations-to-convert-number",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Removing Minimum Number of Magic Beans",
+      "slug": "removing-minimum-number-of-magic-beans",
+      "difficulty": "Medium"
+    },
+    {
+      "title": "Minimum Operations to Make the Integer Zero",
+      "slug": "minimum-operations-to-make-the-integer-zero",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
