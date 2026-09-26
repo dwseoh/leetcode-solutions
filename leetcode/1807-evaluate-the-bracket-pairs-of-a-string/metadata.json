@@ -1,0 +1,30 @@
+{
+  "id": 1807,
+  "title": "Evaluate the Bracket Pairs of a String",
+  "slug": "evaluate-the-bracket-pairs-of-a-string",
+  "url": "https://leetcode.com/problems/evaluate-the-bracket-pairs-of-a-string/",
+  "difficulty": "Medium",
+  "acceptance_rate": 80.7,
+  "status": "solved",
+  "date_solved": "2026-09-26",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(n)"
+  },
+  "topics": [
+    "array",
+    "hash-map",
+    "string"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [
+    {
+      "title": "Apply Substitutions",
+      "slug": "apply-substitutions",
+      "difficulty": "Medium"
+    }
+  ],
+  "notes": ""
+}
