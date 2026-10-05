@@ -1,0 +1,24 @@
+{
+  "id": 856,
+  "title": "Score of Parentheses",
+  "slug": "score-of-parentheses",
+  "url": "https://leetcode.com/problems/score-of-parentheses/",
+  "difficulty": "Medium",
+  "acceptance_rate": 64.9,
+  "status": "solved",
+  "date_solved": "2026-10-05",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "string",
+    "stack",
+    "bracket-sequences"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
