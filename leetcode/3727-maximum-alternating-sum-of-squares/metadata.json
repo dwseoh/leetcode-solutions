@@ -1,0 +1,24 @@
+{
+  "id": 3727,
+  "title": "Maximum Alternating Sum of Squares",
+  "slug": "maximum-alternating-sum-of-squares",
+  "url": "https://leetcode.com/problems/maximum-alternating-sum-of-squares/",
+  "difficulty": "Medium",
+  "acceptance_rate": 74.2,
+  "status": "solved",
+  "date_solved": "2026-10-13",
+  "attempts": 1,
+  "complexity": {
+    "time": "O(n log n)",
+    "space": "O(1)"
+  },
+  "topics": [
+    "array",
+    "greedy",
+    "sorting"
+  ],
+  "patterns": [],
+  "companies": [],
+  "similar_questions": [],
+  "notes": ""
+}
